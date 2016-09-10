@@ -94,10 +94,43 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\common.css" />
+    <Content Include="css\Loader.css" />
     <Content Include="favicon.ico" />
     <Content Include="index.html" />
     <Content Include="large.jpg" />
     <Content Include="medium.jpg" />
+    <Content Include="ng_app\App.js" />
+    <Content Include="ng_app\common\AppService.js" />
+    <Content Include="ng_app\common\Constants.js" />
+    <Content Include="ng_app\common\Directives.js" />
+    <Content Include="ng_app\common\Filters.js" />
+    <Content Include="ng_app\common\NavigationController.js" />
+    <Content Include="ng_app\components\about\about.controller.js" />
+    <Content Include="ng_app\components\about\about.html" />
+    <Content Include="ng_app\components\about\about.module.js" />
+    <Content Include="ng_app\components\about\about.service.js" />
+    <Content Include="ng_app\components\works\Partials\Images\Assets Syncer.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Chin2km Portfolio.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Designers Portal.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Fantasy League.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Glasswall.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Groups.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Infusion.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Jettravels.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Leadersboard.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Moneybase.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Solution Studio.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Transparent Academy.png" />
+    <Content Include="ng_app\components\works\Partials\Images\Workflow System.png" />
+    <Content Include="ng_app\components\works\works.controller.js" />
+    <Content Include="ng_app\components\works\works.html" />
+    <Content Include="ng_app\components\works\works.module.js" />
+    <Content Include="ng_app\components\works\works.service.js" />
+    <Content Include="ng_app\components\work_details\work_details.controller.js" />
+    <Content Include="ng_app\components\work_details\work_details.html" />
+    <Content Include="ng_app\components\work_details\work_details.module.js" />
+    <Content Include="ng_app\components\work_details\work_details.service.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -120,10 +153,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="css\" />
     <Folder Include="Images\" />
     <Folder Include="js_setup\" />
-    <Folder Include="ng_app\" />
+    <Folder Include="ng_app\common\Templates\" />
+    <Folder Include="ng_app\components\works\Partials\Boeing Workflow System\" />
+    <Folder Include="ng_app\components\work_details\Partials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
