@@ -1,15 +1,8 @@
-<div class="portfolio">
+<div class="maps-container">
 
 
-    <article ng-repeat="work in worksVM.allWorks" ng-click="worksVM.goToDetails(work.name)">
-        <header ng-class="dumpsterzThemes.allThemes[dumpsterzThemes.activeTheme].font">
-            <img src="ng_app/components/works/Partials/Images/{{::work.name}}.png" />
-        </header>
-        <div class="details" ng-class="dumpsterzThemes.allThemes[dumpsterzThemes.activeTheme].bg">
-            <h4>{{::work.name}}</h4>
-            <h5>{{::work.description}}</h5>
-        </div>
-    </article>
+    <div id="mapid"></div>
+
 
 
 </div>

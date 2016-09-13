@@ -24,6 +24,14 @@
         _this.goToDetails = function(name) {
             $location.url('/works/' + name)
         }
+        var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY2hpbjJrbSIsImEiOiJjaXQxNXo4bTEwb2xxMzBxcGJtb3d3cGpzIn0.cDV_m7WudjUP1qKE6gBTEg', {
+            attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+            maxZoom: 18,
+            minZoom:2,
+            id: 'your.mapbox.project.id',
+            accessToken: 'your.mapbox.public.access.token'
+        }).addTo(mymap);
     }
 
 })();

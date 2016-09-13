@@ -21,7 +21,7 @@ body:before {
     height: 100%;
     float: left;
     width: 0;
-    margin-top: -32767px
+    margin-top: -32767px;
 }
 
 h1,h2,h3,h4,h5,span,i {
@@ -172,7 +172,6 @@ label {
     height: 60px;
     position: fixed;
     z-index: 999;
-    background-size: 22% 50%
 }
 
 @media only screen and (max-width: 479px) {
@@ -234,7 +233,6 @@ footer {
     z-index: 999;
     opacity: .8;
     padding-top: 10px;
-    margin: 32px 0 -20px 0
 }
 
 ::-webkit-scrollbar {
@@ -264,3 +262,6 @@ footer {
     display: inline;
     background-image: url(/Images/icon_gray.png)
 }
+
+
+#mapid { height: 500px; }
