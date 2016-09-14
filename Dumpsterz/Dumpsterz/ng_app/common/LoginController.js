@@ -3,9 +3,9 @@
     var LoginController = angular.module("diaperDumpsterApp")
     .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', '$location', '$timeout', 'AppService', 'ParseLoginService'];
+    LoginController.$inject = ['$scope','$window', '$location', '$timeout', 'AppService', 'ParseLoginService'];
 
-    function LoginController($scope, $location, $timeout, AppService, ParseLoginService) {
+    function LoginController($scope,$window, $location, $timeout, AppService, ParseLoginService) {
 
         var _this = $scope;
         _this.User = {};
@@ -41,8 +41,8 @@
 
             ParseLoginService.login(_this.login_id, _this.login_pwd).then(function (_loggedInUser) {
 
-                sessionStorage.sessionToken = _loggedInUser.sessionToken;
-                sessionStorage.loggedInUser = _loggedInUser;
+                $window.sessionStorage.sessionToken = _loggedInUser.sessionToken;
+                $window.sessionStorage.loggedInUser = _loggedInUser;
                 _this.User = _loggedInUser;
 
                 Materialize.toast("User Logged In " + _loggedInUser.username, 4000, "blue");
@@ -82,12 +82,12 @@
 
         function getCurrentUser() {
             ParseLoginService.getCurrentUser().then(function (user) {
-                sessionStorage.sessionToken = user.sessionToken;
-                sessionStorage.loggedInUser = user;
+                $window.sessionStorage.sessionToken = user.sessionToken;
+                $window.sessionStorage.loggedInUser = user;
                 _this.User = user;
             }, function error(_errorResponse) {
-                delete sessionStorage.sessionToken;
-                delete sessionStorage.loggedInUser;
+                delete $window.sessionStorage.sessionToken;
+                delete $window.sessionStorage.loggedInUser;
                 delete _this.User;
             });
         }
@@ -95,8 +95,8 @@
         function logout() {
             ParseLoginService.logout().then(function (_loggedInUser) {
                 Materialize.toast("Successfully logged out!", 4000, "blue");
-                delete sessionStorage.sessionToken;
-                delete sessionStorage.loggedInUser;
+                delete $window.sessionStorage.sessionToken;
+                delete $window.sessionStorage.loggedInUser;
 
             }, function error(_errorResponse) {
                 Materialize.toast("Logout Failed !<br>" + _errorResponse, 4000, "red");
@@ -104,7 +104,7 @@
         }
 
         function showSignUpControls() {
-            if (sessionStorage.sessionToken) {
+            if ($window.sessionStorage.sessionToken) {
                 return false;
             }
             else {

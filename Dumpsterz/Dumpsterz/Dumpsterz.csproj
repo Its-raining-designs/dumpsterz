@@ -96,15 +96,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\jasmine\jasmine.css" />
+    <Content Include="Content\jasmine\jasmine_favicon.png" />
     <Content Include="css\common.css" />
     <Content Include="css\Loader.css" />
     <Content Include="favicon.ico" />
     <Content Include="Images\current-location.png" />
     <Content Include="index.html" />
-    <Content Include="js_setup\Angular-Route.js" />
-    <Content Include="js_setup\Angular.js" />
     <Content Include="js_setup\jquery-2.1.1.min.js" />
     <Content Include="js_setup\materialize.min.js" />
+    <Content Include="UnitTests\ParseLoginService.test.js" />
     <Content Include="large.jpg" />
     <Content Include="medium.jpg" />
     <Content Include="ng_app\App.js" />
@@ -140,7 +141,18 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="js_setup\angular-mocks.js" />
+    <Content Include="js_setup\angular-route.js" />
+    <Content Include="js_setup\angular-route.min.js" />
+    <Content Include="js_setup\angular.js" />
+    <Content Include="js_setup\angular.min.js" />
+    <Content Include="js_setup\jasmine\boot.js" />
+    <Content Include="js_setup\jasmine\console.js" />
+    <Content Include="js_setup\jasmine\jasmine-html.js" />
+    <Content Include="js_setup\jasmine\jasmine.js" />
     <Content Include="wide.jpg" />
+    <Content Include="js_setup\angular.min.js.map" />
+    <Content Include="js_setup\angular-route.min.js.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -149,8 +161,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="scripts\ai.0.22.19-build00125.js" />
-    <Content Include="scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="small.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -159,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ng_app\components\dumpsters\Partials\Boeing Workflow System\" />
+    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

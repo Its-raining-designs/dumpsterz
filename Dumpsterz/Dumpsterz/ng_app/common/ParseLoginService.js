@@ -3,7 +3,7 @@
     'use strict';
 
     var AppService = angular.module('diaperDumpsterApp')
-    .factory('ParseLoginService', function ($http,$q) {
+    .factory('ParseLoginService', function ($http,$q,$window) {
 
         var baseURL = "https://api.parse.com/1/";
 
@@ -66,7 +66,7 @@
                 headers: {
                     "x-parse-application-id": "R8jG6ChCSOGxvB4UWjcMMlEMuloVjoVLo4mS2xkD",
                     "x-parse-rest-api-key": "8GjcnO3gOdaIE41Nl9Y2juLEQgiNvHVdUM1aZoxF",
-                    "x-parse-session-token": sessionStorage.sessionToken
+                    "x-parse-session-token": $window.sessionStorage.sessionToken
                 }
 
             }
@@ -87,7 +87,7 @@
                 headers: {
                     "x-parse-application-id": "R8jG6ChCSOGxvB4UWjcMMlEMuloVjoVLo4mS2xkD",
                     "x-parse-rest-api-key": "8GjcnO3gOdaIE41Nl9Y2juLEQgiNvHVdUM1aZoxF",
-                    "x-parse-session-token": sessionStorage.sessionToken
+                    "x-parse-session-token": $window.sessionStorage.sessionToken
                 }
             }).then(function (response) {
                 def.resolve(response.data);

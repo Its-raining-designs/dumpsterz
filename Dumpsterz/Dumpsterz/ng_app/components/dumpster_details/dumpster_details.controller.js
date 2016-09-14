@@ -40,7 +40,7 @@
             accessToken: 'your.mapbox.public.access.token'
         }).addTo(myStaticMap);
 
-
+        
 
         function getDumpsterInDetail() {
             var promiseObj = dumpster_detailsService.getDumpsterInDetail($routeParams.id);
