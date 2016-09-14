@@ -1,0 +1,21 @@
+﻿  <!--Comment Modal -->
+<div id="comment_modal" class="modal">
+    <div class="modal-content">
+        <h4>Add Comment about {{dumpster_detailsVM.thisDumpster.name}}</h4>
+        <div class="row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <i class="material-icons prefix">chat_bubble_outline</i>
+                        <textarea id="textarea1" class="materialize-textarea" ng-model="dumpster_detailsVM.comment"></textarea>
+                        <label for="textarea1">Type your comment here..</label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a ng-click="dumpster_detailsVM.commitComment(false)" class="waves-effect waves-light btn red"><i class="material-icons left">sentiment_dissatisfied</i>{{dumpster_detailsVM.getCommentsCount(false)}} Dislikes </a>
+        <a ng-click="dumpster_detailsVM.commitComment(true)" class="waves-effect waves-light btn green"><i class="material-icons left">sentiment_satisfied</i>{{dumpster_detailsVM.getCommentsCount(true)}} Likes</a>
+    </div>
+</div>
