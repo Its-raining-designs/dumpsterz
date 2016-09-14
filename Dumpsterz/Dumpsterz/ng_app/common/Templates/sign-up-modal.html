@@ -7,17 +7,17 @@
                 <div class="row">
                     <div class="input-field col s12">
                         <i class="material-icons prefix">email</i>
-                        <input id="icon_prefix" type="email" class="validate" ng-model="$parent.signup_email">
+                        <input id="icon_prefix" type="email" class="validate" ng-model="Parent.signup_email">
                         <label for="icon_prefix">Email-ID</label>
                     </div>
                     <div class="input-field col s6">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="icon_prefix" type="text" class="validate" ng-model="$parent.signup_id">
+                        <input id="icon_prefix" type="text" class="validate" ng-model="Parent.signup_id">
                         <label for="icon_prefix">User ID</label>
                     </div>
                     <div class="input-field col s6">
                         <i class="material-icons prefix">lock</i>
-                        <input id="icon_telephone" type="password" class="validate" ng-model="$parent.signup_pwd">
+                        <input id="icon_telephone" type="password" class="validate" ng-model="Parent.signup_pwd">
                         <label for="icon_telephone">Password</label>
                     </div>
                 </div>
@@ -25,7 +25,7 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a ng-click="signup()" class="waves-effect waves-light btn blue"><i class="material-icons left">done</i>Sign up</a>
-        <a ng-click="cancel()" class="modal-action modal-close waves-effect waves-light btn red"><i class="material-icons left">arrow_back</i>Cancel </a>
+        <a ng-click="Parent.signup()" class="waves-effect waves-light btn blue"><i class="material-icons left">done</i>Sign up</a>
+        <a  class="modal-action modal-close waves-effect waves-light btn red"><i class="material-icons left">arrow_back</i>Cancel </a>
     </div>
 </div>

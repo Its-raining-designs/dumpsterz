@@ -41,27 +41,29 @@
 
 </head>
 <body>
-    <div class="my-preloads"> </div>
     <div class="page-wrap">
 
-        <header></header>
-        <div class="leftside-nav" ng-controller="LoginController">
+        <header>
+            <!--Polygon shaper side nav backbground-->
+        </header>
+
+        <div class="leftside-nav" ng-controller="LoginController as loginVM">
             <a href="#/" class="diaper-logo"><i class="material-icons">local_activity</i><h4>Diaper Dumpsters</h4></a><br />
             <div class="dumpster-desc">Find the Diaper Dumpsters around you easier than ever before..</div>
             
-            <div class="sign-up-in" ng-if="showSignUpControls()">
-                <a class="waves-effect waves-light btn green" ng-click="openLoginPopUp()"><i class="material-icons left">cloud_done</i>Log in</a>
-                <a class="waves-effect waves-light btn blue" ng-click="openSignupPopUp()"><i class="material-icons right">lock</i>Sign up</a>
+            <div class="sign-up-in" ng-if="loginVM.showSignUpControls()">
+                <a class="waves-effect waves-light btn green" ng-click="loginVM.openLoginPopUp()"><i class="material-icons left">cloud_done</i>Log in</a>
+                <a class="waves-effect waves-light btn blue" ng-click="loginVM.openSignupPopUp()"><i class="material-icons right">lock</i>Sign up</a>
             </div>
            
-             <div class="logged-in" ng-if="!showSignUpControls()">
-                <i class="material-icons left">account_circle</i><span class="userid">{{User.username}}</span><span class="email">{{User.email}}</span>
+             <div class="logged-in" ng-if="!loginVM.showSignUpControls()">
+                <i class="material-icons left">account_circle</i><span class="userid">{{loginVM.User.username}}</span><span class="email">{{loginVM.User.email}}</span>
 
-                <div class="waves-effect waves-light log-out" ng-click="logout()"><i class="material-icons right">call_made</i>Log out</div>
+                <div class="waves-effect waves-light log-out" ng-click="loginVM.logout()"><i class="material-icons right">call_made</i>Log out</div>
             </div>
 
-            <div ng-include="'/ng_app/common/Templates/sign-in-modal.html'"></div>
-            <div ng-include="'/ng_app/common/Templates/sign-up-modal.html'"></div>
+            <div ng-include="'/ng_app/common/Templates/sign-in-modal.html'" onload="Parent = loginVM;"></div>
+            <div ng-include="'/ng_app/common/Templates/sign-up-modal.html'" onload="Parent = loginVM;"></div>
 
         </div>
         
@@ -78,52 +80,7 @@
     </footer>
 
 
-    <div id="LoaderAnime" ng-show="loaderVisibility">
-        <div>
-            <div class="preloader-wrapper big active">
-                <div class="spinner-layer spinner-blue">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div><div class="gap-patch">
-                        <div class="circle"></div>
-                    </div><div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-
-                <div class="spinner-layer spinner-red">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div><div class="gap-patch">
-                        <div class="circle"></div>
-                    </div><div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-
-                <div class="spinner-layer spinner-yellow">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div><div class="gap-patch">
-                        <div class="circle"></div>
-                    </div><div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-
-                <div class="spinner-layer spinner-green">
-                    <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div><div class="gap-patch">
-                        <div class="circle"></div>
-                    </div><div class="circle-clipper right">
-                        <div class="circle"></div>
-                    </div>
-                </div>
-            </div>
-            <span>"Just a moment..."</span>
-        </div>
-    </div>
+    <div ng-show="loaderVisibility" ng-include="'/ng_app/common/Templates/loader.html'"></div>
 
 
 

@@ -7,7 +7,7 @@
 
     function LoginController($scope,$window, $location, $timeout, AppService, ParseLoginService) {
 
-        var _this = $scope;
+        var _this = this;
         _this.User = {};
         _this.openLoginPopUp = openLoginPopUp;
         _this.login = login;

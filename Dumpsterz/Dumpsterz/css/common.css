@@ -407,13 +407,6 @@ padding: 0px !important;
     background: #d4d4d4
 }
 
-.my-preloads {
-    width: 0;
-    height: 0;
-    display: inline;
-    /*background-image: url(/Images/icon_gray.png)*/
-}
-
 
 .map-element {height: calc(100%);width:100%;position:absolute !important;}
 

@@ -104,6 +104,7 @@
     <Content Include="index.html" />
     <Content Include="js_setup\jquery-2.1.1.min.js" />
     <Content Include="js_setup\materialize.min.js" />
+    <Content Include="ng_app\common\Templates\loader.html" />
     <Content Include="UnitTests\dumpsters.service.test.js" />
     <Content Include="UnitTests\dumpster_details.service,test.js" />
     <Content Include="UnitTests\ParseLoginService.test.js" />
