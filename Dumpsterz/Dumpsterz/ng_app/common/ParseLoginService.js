@@ -52,7 +52,7 @@
             $http(req).then(function (response) {
                 def.resolve(response);
             }, function (response) {
-                def.reject(response.data);
+                def.reject(response.data.error);
             });
             return def.promise;
         }

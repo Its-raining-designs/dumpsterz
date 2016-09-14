@@ -44,7 +44,7 @@
                     dumpsters: response.data.results
                 });
             }, function (arg) {
-                def.reject("Failed to get lOCATIONS OF dUMPSTERS");
+                def.reject(arg);
             });
             return def.promise;
         }
@@ -67,15 +67,13 @@
                     }
                 }
             }
-            $timeout(function () {
-                $http(req).then(function (response) {
-                    def.resolve({
-                        dumpsters: response.data.results
-                    });
-                }, function (arg) {
-                    def.reject(arg);
+            $http(req).then(function (response) {
+                def.resolve({
+                    dumpsters: response.data.results
                 });
-            },0)
+            }, function (arg) {
+                def.reject(arg);
+            });
 
             return def.promise;
         }
