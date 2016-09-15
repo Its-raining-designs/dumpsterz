@@ -16,7 +16,7 @@
         AppService.LoadTimer(1500);
 
         //Initializing Map and setting View to Netherlands by default
-        var activeMap = L.map('mapid', {
+        var activeMap = L.map('activteMap', {
             zoomControl: false
         }).setView([52.097340, 5.332694], 8);
 

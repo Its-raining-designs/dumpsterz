@@ -118,19 +118,6 @@
     <Content Include="ng_app\common\ParseLoginService.js" />
     <Content Include="ng_app\common\Templates\sign-in-modal.html" />
     <Content Include="ng_app\common\Templates\sign-up-modal.html" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Assets Syncer.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Chin2km Portfolio.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Designers Portal.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Fantasy League.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Glasswall.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Groups.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Infusion.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Jettravels.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Leadersboard.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Moneybase.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Solution Studio.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Transparent Academy.png" />
-    <Content Include="ng_app\components\dumpsters\Partials\Images\Workflow System.png" />
     <Content Include="ng_app\components\dumpsters\dumpsters.controller.js" />
     <Content Include="ng_app\components\dumpsters\dumpsters.html" />
     <Content Include="ng_app\components\dumpsters\dumpsters.module.js" />
@@ -171,7 +158,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ng_app\components\dumpsters\Partials\Boeing Workflow System\" />
+    <Folder Include="ng_app\components\dumpsters\Partials\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
