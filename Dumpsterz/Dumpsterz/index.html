@@ -11,8 +11,6 @@
 
     <!--FAVICON FOR Windows8/10-->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-    <link rel="shortcut icon" type="image/x-icon" href="Images/icon_color.png" />
-
     <meta name="application-name" content="Diaper Dumpsters" />
     <meta name="msapplication-square70x70logo" content="small.jpg" />
     <meta name="msapplication-square150x150logo" content="medium.jpg" />
@@ -40,7 +38,6 @@
         <header>
             <!--Polygon shaper side nav backbground-->
         </header>
-
         <!--Navigation and login Sidebar-->
         <div class="leftside-nav" ng-controller="LoginController as loginVM">
             <a href="#/" class="diaper-logo"><i class="material-icons">local_activity</i><h4>Diaper Dumpsters</h4></a><br />
@@ -52,7 +49,7 @@
             </div>
            
              <div class="logged-in" ng-if="!loginVM.showSignUpControls()">
-                <i class="material-icons left">account_circle</i><span class="userid">{{loginVM.User.username}}</span><span class="email">{{loginVM.User.email}}</span>
+                <i class="material-icons left">account_circle</i><span class="userid">{{User.username}}</span><span class="email">{{User.email}}</span>
 
                 <div class="waves-effect waves-light log-out" ng-click="loginVM.logout()"><i class="material-icons right">call_made</i>Log out</div>
             </div>

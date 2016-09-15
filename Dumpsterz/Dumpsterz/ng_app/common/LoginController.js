@@ -3,18 +3,16 @@
     var LoginController = angular.module("diaperDumpsterApp")
     .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope','$window', '$location', '$timeout', 'AppService', 'ParseLoginService'];
+    LoginController.$inject = ['$rootScope','$window', '$location', '$timeout', 'AppService', 'ParseLoginService'];
 
-    function LoginController($scope,$window, $location, $timeout, AppService, ParseLoginService) {
+    function LoginController($rootScope, $window, $location, $timeout, AppService, ParseLoginService) {
 
         var _this = this;
-        _this.User = {};
         _this.openLoginPopUp = openLoginPopUp;
         _this.login = login;
         _this.logout = logout;
         _this.openSignupPopUp = openSignupPopUp;
         _this.signup = signup;
-        _this.getCurrentUser = getCurrentUser;
 
         _this.showSignUpControls = showSignUpControls;
 
@@ -43,7 +41,7 @@
 
                 $window.sessionStorage.sessionToken = _loggedInUser.sessionToken;
                 $window.sessionStorage.loggedInUser = _loggedInUser;
-                _this.User = _loggedInUser;
+                $rootScope.User = _loggedInUser;
 
                 Materialize.toast("User Logged In " + _loggedInUser.username, 4000, "blue");
                 $('#sign-in-modal').closeModal();
@@ -76,17 +74,6 @@
             });
         }
 
-        function getCurrentUser() {
-            ParseLoginService.getCurrentUser().then(function (user) {
-                $window.sessionStorage.sessionToken = user.sessionToken;
-                $window.sessionStorage.loggedInUser = user;
-                _this.User = user;
-            }, function error(_errorResponse) {
-                delete $window.sessionStorage.sessionToken;
-                delete $window.sessionStorage.loggedInUser;
-                delete _this.User;
-            });
-        }
 
         function logout() {
             ParseLoginService.logout().then(function (_loggedInUser) {
@@ -108,7 +95,6 @@
             }
         }
 
-        //Try getting a logged in user when page loaded!
-        getCurrentUser();
+
     }
 })();
