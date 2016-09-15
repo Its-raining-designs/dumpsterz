@@ -3,9 +3,9 @@
     angular.module('diaperDumpsterApp.dumpster_details.controllers', [])
             .controller('dumpster_detailsController', dumpster_detailsController);
 
-    dumpster_detailsController.$inject = ['$rootScope', '$scope', '$route', '$routeParams', '$location', '$timeout', '$interval', 'AppService', 'dumpster_detailsService'];
+    dumpster_detailsController.$inject = ['$rootScope', '$routeParams', '$location', 'AppService', 'dumpster_detailsService', 'appConstants'];
 
-    function dumpster_detailsController($rootScope, $scope, $route, $routeParams, $location, $timeout, $interval, AppService, dumpster_detailsService) {
+    function dumpster_detailsController($rootScope, $routeParams, $location, AppService, dumpster_detailsService, appConstants) {
 
         var _this = this;
         _this.AppService = AppService;
@@ -29,10 +29,10 @@
         //Initializing Map and setting View to Netherlands by default
         var myStaticMap = L.map('staticmap', {
             zoomControl: false
-        }).setView([52.097340, 5.332694], 8);
+        }).setView(appConstants.NetherlandsLatLng, 8);
 
 
-        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY2hpbjJrbSIsImEiOiJjaXQxNXo4bTEwb2xxMzBxcGJtb3d3cGpzIn0.cDV_m7WudjUP1qKE6gBTEg', {
+        L.tileLayer(appConstants.MapBoxTileLayerURL, {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
             maxZoom: 18,
             minZoom: 2,

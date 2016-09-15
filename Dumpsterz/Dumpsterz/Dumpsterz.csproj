@@ -105,6 +105,7 @@
     <Content Include="index.html" />
     <Content Include="js_setup\jquery-2.1.1.min.js" />
     <Content Include="js_setup\materialize.min.js" />
+    <Content Include="ng_app\common\Constants.js" />
     <Content Include="ng_app\common\Templates\loader.html" />
     <Content Include="UnitTests\dumpsters.service.test.js" />
     <Content Include="UnitTests\dumpster_details.service.test.js" />
@@ -113,7 +114,6 @@
     <Content Include="medium.jpg" />
     <Content Include="ng_app\App.js" />
     <Content Include="ng_app\common\AppService.js" />
-    <Content Include="ng_app\common\Credentials.js" />
     <Content Include="ng_app\common\LoginController.js" />
     <Content Include="ng_app\common\ParseLoginService.js" />
     <Content Include="ng_app\common\Templates\sign-in-modal.html" />

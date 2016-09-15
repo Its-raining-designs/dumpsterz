@@ -3,9 +3,9 @@
     'use strict';
 
     var AppService = angular.module('diaperDumpsterApp')
-    .factory('ParseLoginService', function ($http,$q,$window) {
+    .factory('ParseLoginService', function ($http, $q, $window, appConstants) {
 
-        var baseURL = "https://api.parse.com/1/";
+        var ParseBaseURL = "https://api.parse.com/1/";
 
         return {
             login: login,
@@ -18,8 +18,8 @@
         function login(username,password) {
             var def = $q.defer();
 
-            $http.get(baseURL+"login", {
-                headers: ParseHeaders,
+            $http.get(ParseBaseURL+"login", {
+                headers: appConstants.ParseHeaders,
                 params: {
                     "username": username,
                     "password": password
@@ -40,8 +40,8 @@
 
             var req = {
                 method: 'POST',
-                url: baseURL+'users',
-                headers: ParseHeaders,
+                url: appConstants.ParseBaseURL+'users',
+                headers: appConstants.ParseHeaders,
                 data: {
                     username: username,
                     password: password,
@@ -62,7 +62,7 @@
             var def = $q.defer();
             var req = {
                 method: 'POST',
-                url: baseURL + 'logout',
+                url: ParseBaseURL + 'logout',
                 headers: {
                     "x-parse-application-id": "R8jG6ChCSOGxvB4UWjcMMlEMuloVjoVLo4mS2xkD",
                     "x-parse-rest-api-key": "8GjcnO3gOdaIE41Nl9Y2juLEQgiNvHVdUM1aZoxF",
@@ -83,7 +83,7 @@
         function getCurrentUser() {
             var def = $q.defer();
 
-            $http.get(baseURL + "users/me", {
+            $http.get(ParseBaseURL + "users/me", {
                 headers: {
                     "x-parse-application-id": "R8jG6ChCSOGxvB4UWjcMMlEMuloVjoVLo4mS2xkD",
                     "x-parse-rest-api-key": "8GjcnO3gOdaIE41Nl9Y2juLEQgiNvHVdUM1aZoxF",

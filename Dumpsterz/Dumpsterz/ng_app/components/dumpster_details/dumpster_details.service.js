@@ -2,11 +2,9 @@
     angular.module('diaperDumpsterApp.dumpster_details.services',[])
            .factory('dumpster_detailsService', dumpster_detailsService);
 
-    dumpster_detailsService.$inject = ["$timeout","$q","$http"];
+    dumpster_detailsService.$inject = ["$timeout", "$q", "$http", "appConstants"];
 
-    function dumpster_detailsService($timeout, $q, $http) {
-
-        var baseURL = "https://api.parse.com/1/classes/";
+    function dumpster_detailsService($timeout, $q, $http, appConstants) {
 
 
         var dumpster_detailsService = {
@@ -20,8 +18,8 @@
         function getDumpsterInDetail(dumpsterId) {
             var def = $q.defer();
 
-            $http.get(baseURL + "location/" + dumpsterId, {
-                headers: ParseHeaders
+            $http.get(appConstants.ParseBaseURL + "location/" + dumpsterId, {
+                headers: appConstants.ParseHeaders
             }).then(function (response) {
                 def.resolve({
                     dumpster: response.data
@@ -38,8 +36,8 @@
 
             var req = {
                 method: 'GET',
-                url: baseURL + 'review',
-                headers: ParseHeaders,
+                url: appConstants.ParseBaseURL + 'review',
+                headers: appConstants.ParseHeaders,
                 params: {
                     where: {
                         location:{
@@ -67,8 +65,8 @@
 
             var req = {
                 method: 'POST',
-                url: baseURL + 'review',
-                headers: ParseHeaders,
+                url: appConstants.ParseBaseURL + 'review',
+                headers: appConstants.ParseHeaders,
                 data: {
                     comment: comment,
                     location: {

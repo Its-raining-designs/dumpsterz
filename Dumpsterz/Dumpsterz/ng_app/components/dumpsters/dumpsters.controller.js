@@ -3,9 +3,9 @@
     angular.module('diaperDumpsterApp.dumpsters.controllers', [])
             .controller('dumpstersController', dumpstersController);
 
-    dumpstersController.$inject = ['$rootScope', '$scope', '$route', '$location', '$timeout', '$interval', 'AppService', 'dumpstersService', 'ParseLoginService'];
+    dumpstersController.$inject = ['$rootScope', '$scope', '$route', '$location', '$timeout', '$interval', 'AppService', 'dumpstersService', 'ParseLoginService', 'appConstants'];
 
-    function dumpstersController($rootScope, $scope, $route, $location, $timeout, $interval, AppService, dumpstersService, ParseLoginService) {
+    function dumpstersController($rootScope, $scope, $route, $location, $timeout, $interval, AppService, dumpstersService, ParseLoginService, appConstants) {
         var _this = this;
         window.scrollTo(0, 0);
 
@@ -18,7 +18,7 @@
         //Initializing Map and setting View to Netherlands by default
         var activeMap = L.map('activteMap', {
             zoomControl: false
-        }).setView([52.097340, 5.332694], 8);
+        }).setView(appConstants.NetherlandsLatLng, 8);
 
         var MarkersArray = [];
         var zoomRadius = {2: 10000,3: 7500,4: 3000,5: 2000,6: 1000,7: 500,8: 200,
@@ -44,7 +44,7 @@
         L.control.zoom({
             position: 'bottomright'
         }).addTo(activeMap);
-        L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiY2hpbjJrbSIsImEiOiJjaXQxNXo4bTEwb2xxMzBxcGJtb3d3cGpzIn0.cDV_m7WudjUP1qKE6gBTEg', {
+        L.tileLayer(appConstants.MapBoxTileLayerURL, {
             attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
             maxZoom: 18,
             minZoom: 2,

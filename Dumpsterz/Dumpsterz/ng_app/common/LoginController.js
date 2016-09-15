@@ -3,9 +3,9 @@
     var LoginController = angular.module("diaperDumpsterApp")
     .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$rootScope','$window', '$location', '$timeout', 'AppService', 'ParseLoginService'];
+    LoginController.$inject = ['$rootScope', '$window', '$location', '$timeout', 'AppService', 'ParseLoginService', 'appConstants'];
 
-    function LoginController($rootScope, $window, $location, $timeout, AppService, ParseLoginService) {
+    function LoginController($rootScope, $window, $location, $timeout, AppService, ParseLoginService, appConstants) {
 
         var _this = this;
         _this.openLoginPopUp = openLoginPopUp;

@@ -2,11 +2,10 @@
     angular.module('diaperDumpsterApp.dumpsters.services',[])
            .factory('dumpstersService', dumpstersService);
 
-    dumpstersService.$inject = ["$timeout","$q","$http","$timeout"];
+    dumpstersService.$inject = ["$timeout", "$q", "$http", "$timeout", "appConstants"];
 
-    function dumpstersService($timeout, $q, $http, $timeout) {
+    function dumpstersService($timeout, $q, $http, $timeout, appConstants) {
 
-        var baseURL = "https://api.parse.com/1/classes/";
 
         var dumpstersService = {
             getDumpstersInBox: getDumpstersInBox,
@@ -22,8 +21,8 @@
 
             var req = {
                 method: 'GET',
-                url: baseURL+'location',
-                headers: ParseHeaders,
+                url: appConstants.ParseBaseURL+'location',
+                headers: appConstants.ParseHeaders,
                 params: {
                     where: {
                         geo: {
@@ -54,8 +53,8 @@
 
             var req = {
                 method: 'GET',
-                url: baseURL + 'location',
-                headers: ParseHeaders,
+                url: appConstants.ParseBaseURL + 'location',
+                headers: appConstants.ParseHeaders,
                 params: {
                     where: {
                         geo: {
