@@ -96,8 +96,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\jasmine\jasmine.css" />
-    <Content Include="Content\jasmine\jasmine_favicon.png" />
     <Content Include="css\common.css" />
     <Content Include="css\materialize.min.css" />
     <Content Include="favicon.ico" />
