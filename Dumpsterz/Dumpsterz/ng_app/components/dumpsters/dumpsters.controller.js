@@ -59,7 +59,8 @@
                 iconAnchor: [15, 15]
             }
         });
-        gotoCurrentLocation();
+
+        
        
         
 
@@ -137,6 +138,9 @@
             },
             function error(err) {
                 Materialize.toast(err, 4000, 'red');
+                MarkersArray.map(function (m) {
+                    activeMap.removeLayer(m);
+                })
             });
         }
         
@@ -181,7 +185,8 @@
             
         }
 
-
+        //Try and getting user's current location on page load
+        gotoCurrentLocation();
 
     }
 

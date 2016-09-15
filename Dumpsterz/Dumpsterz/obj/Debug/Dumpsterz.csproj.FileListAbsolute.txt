@@ -61,6 +61,5 @@ E:\Github\Try-Outs\Dumpsterz\Dumpsterz\bin\Microsoft.AI.Web.xml
 E:\Github\Try-Outs\Dumpsterz\Dumpsterz\bin\Microsoft.AI.WindowsServer.xml
 E:\Github\Try-Outs\Dumpsterz\Dumpsterz\bin\Microsoft.ApplicationInsights.xml
 E:\Github\Try-Outs\Dumpsterz\Dumpsterz\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Github\Try-Outs\Dumpsterz\Dumpsterz\obj\Debug\Dumpsterz.csprojResolveAssemblyReference.cache
 E:\Github\Try-Outs\Dumpsterz\Dumpsterz\obj\Debug\Dumpsterz.dll
 E:\Github\Try-Outs\Dumpsterz\Dumpsterz\obj\Debug\Dumpsterz.pdb

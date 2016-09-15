@@ -99,6 +99,7 @@
     <Content Include="Content\jasmine\jasmine.css" />
     <Content Include="Content\jasmine\jasmine_favicon.png" />
     <Content Include="css\common.css" />
+    <Content Include="css\materialize.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Images\current-location.png" />
     <Content Include="index.html" />
@@ -106,7 +107,7 @@
     <Content Include="js_setup\materialize.min.js" />
     <Content Include="ng_app\common\Templates\loader.html" />
     <Content Include="UnitTests\dumpsters.service.test.js" />
-    <Content Include="UnitTests\dumpster_details.service,test.js" />
+    <Content Include="UnitTests\dumpster_details.service.test.js" />
     <Content Include="UnitTests\ParseLoginService.test.js" />
     <Content Include="large.jpg" />
     <Content Include="medium.jpg" />

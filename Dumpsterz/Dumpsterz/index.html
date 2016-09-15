@@ -20,19 +20,13 @@
     <meta name="msapplication-square310x310logo" content="large.jpg" />
     <meta name="msapplication-TileColor" content="#296e47" />
 
-    <!--JS-->
-    <script src="js_setup/angular.js"></script>
-    <script src="js_setup/angular-route.js"></script>
-
     <!--CSS-->
-    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
     <link href="css/common.css" rel="stylesheet" />
-    <!-- Compiled and minified MaterializeCSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
-    <!-- Leaflet CSS -->
+    <link href="css/materialize.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
 
     <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
@@ -47,6 +41,7 @@
             <!--Polygon shaper side nav backbground-->
         </header>
 
+        <!--Navigation and login Sidebar-->
         <div class="leftside-nav" ng-controller="LoginController as loginVM">
             <a href="#/" class="diaper-logo"><i class="material-icons">local_activity</i><h4>Diaper Dumpsters</h4></a><br />
             <div class="dumpster-desc">Find the Diaper Dumpsters around you easier than ever before..</div>
@@ -85,6 +80,9 @@
 
 
 
+    <!--JS-->
+    <script src="js_setup/angular.js"></script>
+    <script src="js_setup/angular-route.js"></script>
     <script src="js_setup/jquery-2.1.1.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
     <script src="js_setup/materialize.min.js"></script>

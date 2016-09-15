@@ -72,7 +72,7 @@
                     dumpsters: response.data.results
                 });
             }, function (arg) {
-                def.reject(arg);
+                def.reject(arg.data.error);
             });
 
             return def.promise;

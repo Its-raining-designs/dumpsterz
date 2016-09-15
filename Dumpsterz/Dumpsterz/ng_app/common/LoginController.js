@@ -49,8 +49,6 @@
                 $('#sign-in-modal').closeModal();
 
             }, function error(_errorResponse) {
-                // if error occurred anywhere above, this code will
-                // be executed
                 Materialize.toast("Login Failed !<br>" + _errorResponse.error, 4000, "red");
             });
         }
@@ -74,8 +72,6 @@
                 $('#sign-in-modal').openModal();
 
             }, function error(_errorResponse) {
-                // if error occurred anywhere above, this code will
-                // be executed
                 Materialize.toast("Sign-up Failed !<br>" + _errorResponse, 4000, "red");
             });
         }
@@ -112,7 +108,7 @@
             }
         }
 
-
+        //Try getting a logged in user when page loaded!
         getCurrentUser();
     }
 })();
