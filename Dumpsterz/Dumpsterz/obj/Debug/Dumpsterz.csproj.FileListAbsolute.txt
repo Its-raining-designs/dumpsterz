@@ -63,3 +63,4 @@ E:\Github\Try-Outs\Dumpsterz\Dumpsterz\bin\Microsoft.ApplicationInsights.xml
 E:\Github\Try-Outs\Dumpsterz\Dumpsterz\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 E:\Github\Try-Outs\Dumpsterz\Dumpsterz\obj\Debug\Dumpsterz.dll
 E:\Github\Try-Outs\Dumpsterz\Dumpsterz\obj\Debug\Dumpsterz.pdb
+E:\Github\Try-Outs\Dumpsterz\Dumpsterz\obj\Debug\Dumpsterz.csprojResolveAssemblyReference.cache

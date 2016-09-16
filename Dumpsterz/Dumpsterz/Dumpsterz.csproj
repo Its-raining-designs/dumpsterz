@@ -141,6 +141,7 @@
     <Content Include="wide.jpg" />
     <Content Include="js_setup\angular.min.js.map" />
     <Content Include="js_setup\angular-route.min.js.map" />
+    <None Include="Properties\PublishProfiles\x.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
