@@ -40,7 +40,7 @@
 
             var req = {
                 method: 'POST',
-                url: appConstants.ParseBaseURL+'users',
+                url: ParseBaseURL+'users',
                 headers: appConstants.ParseHeaders,
                 data: {
                     username: username,

@@ -1,0 +1,6 @@
+E:\Github\Try-Outs\OnePush\OnePush\bin\ApplicationInsights.config
+E:\Github\Try-Outs\OnePush\OnePush\bin\OnePush.dll.config
+E:\Github\Try-Outs\OnePush\OnePush\bin\OnePush.dll
+E:\Github\Try-Outs\OnePush\OnePush\bin\OnePush.pdb
+E:\Github\Try-Outs\OnePush\OnePush\obj\Debug\OnePush.dll
+E:\Github\Try-Outs\OnePush\OnePush\obj\Debug\OnePush.pdb
