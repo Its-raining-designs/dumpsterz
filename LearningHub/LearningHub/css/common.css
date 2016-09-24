@@ -91,30 +91,30 @@ label {
     position: relative;
 }
 
-.onepush-logo {
+.LearningHub-logo {
     color: white;
     cursor: pointer !important;
 }
 
-    .onepush-logo i {
+    .LearningHub-logo i {
         font-size: 50px;
         vertical-align: middle;
         margin: 5px;
         transition: all 0.5s ease-out;
     }
 
-    .onepush-logo h4 {
+    .LearningHub-logo h4 {
         display: inline;
         vertical-align: middle;
         cursor: pointer !important;
         text-shadow: 1px 1px 3px #223e52;
     }
 
-    .onepush-logo:hover i {
+    .LearningHub-logo:hover i {
         transform: rotate(-45deg);
     }
 
-    .onepush-logo:hover h4 {
+    .LearningHub-logo:hover h4 {
         border-bottom: solid 1px #dadada;
     }
 
@@ -191,7 +191,7 @@ header {
 
 
 
-.onepush-desc {
+.LearningHub-desc {
     font-size: 1.2em;
     margin: 15px 10px;
     word-break: break-word;
@@ -201,7 +201,7 @@ header {
 
 
 
-.portfolios-container {
+.LearningPaths-container {
     position: absolute;
     padding: 15px;
     padding-left: 369px;
@@ -213,7 +213,7 @@ header {
     overflow-y: auto;
 }
 
-.portfolios-scroll {
+.LearningPaths-scroll {
     width: 100%;
     padding: 0px 15px 0px 0px;
     height: 75%;
@@ -221,7 +221,7 @@ header {
     overflow-x: hidden;
 }
 
-.portfolio-item {
+.learningPath-item {
     margin: 20px 0px;
     background: rgba(0, 0, 0, 0.17);
     padding: 15px;
@@ -230,22 +230,22 @@ header {
     transition: all 0.3s ease-in;
 }
 
-    .portfolio-item:hover .portfolio-img {
+    .learningPath-item:hover .learningPath-img {
         transform: scale(1.1);
     }
 
-    .portfolio-item.list {
+    .learningPath-item.list {
         width: 100%;
         margin: 15px 0px;
     }
 
-    .portfolio-item.grid {
+    .learningPath-item.grid {
         width: 43%;
         margin: 3%;
         min-height: 240px;
     }
 
-        .portfolio-item.grid .portfolio-img {
+        .learningPath-item.grid .learningPath-img {
             border-radius: 500%;
             width: 25%;
             height: 25%;
@@ -260,7 +260,7 @@ header {
             margin-right: auto;
         }
 
-    .portfolio-item.list .portfolio-img {
+    .learningPath-item.list .learningPath-img {
         float: left;
         border-radius: 500%;
         width: 5%;
@@ -272,36 +272,36 @@ header {
         min-height: 100px;
     }
 
-    .portfolio-item .portfolio-img:hover {
+    .learningPath-item .learningPath-img:hover {
         border-radius: 15px;
         transform: scale(1.1);
     }
 
-    .portfolio-item.grid .portfolio-texts {
+    .learningPath-item.grid .learningPath-texts {
         float: left;
         padding: 0px 15px;
         width: 100%;
     }
 
-    .portfolio-item.list .portfolio-texts {
+    .learningPath-item.list .learningPath-texts {
         float: left;
         padding: 0px 15px;
         width: 75%;
     }
 
-        .portfolio-item.list .portfolio-texts h4 {
+        .learningPath-item.list .learningPath-texts h4 {
             margin: 5px 0px;
         }
 
-    .portfolio-item.grid .portfolio-texts h4 {
+    .learningPath-item.grid .learningPath-texts h4 {
         text-align: center;
     }
 
-    .portfolio-item .portfolio-texts i {
+    .learningPath-item .learningPath-texts i {
         vertical-align: text-bottom;
     }
 
-    .portfolio-item .portfolio-texts .long-text {
+    .learningPath-item .learningPath-texts .long-text {
         word-break:break-all;
         white-space:nowrap;
         width:100%;
@@ -432,22 +432,22 @@ header {
         width: 100%;
     }
 
-    .onepush-desc {
+    .LearningHub-desc {
         display: none;
     }
 
-    .portfolios-container {
+    .LearningPaths-container {
         padding-left: 15px;
         padding-top: 76px;
         z-index: 9999;
     }
 
-    .portfolio-item.grid {
+    .learningPath-item.grid {
         width: 100%;
         margin: 15px 0px;
     }
 
-    .portfolio-item.list .portfolio-img {
+    .learningPath-item.list .learningPath-img {
         float: none;
         display: block;
         margin: auto;
@@ -462,13 +462,13 @@ header {
         left: inherit;
     }
 
-    .portfolio-item.grid .portfolio-img {
+    .learningPath-item.grid .learningPath-img {
     }
 
-    .portfolio-item.list .portfolio-texts {
+    .learningPath-item.list .learningPath-texts {
     }
 
-    .portfolio-item.grid .portfolio-texts {
+    .learningPath-item.grid .learningPath-texts {
     }
 }
 
@@ -485,11 +485,11 @@ header {
         width: 100%;
     }
 
-    .onepush-desc {
+    .LearningHub-desc {
         display: none;
     }
 
-    .portfolios-container {
+    .LearningPaths-container {
         padding-left: 15px;
         padding-top: 91px;
         z-index: 9999;
@@ -504,16 +504,16 @@ header {
         left: inherit;
     }
 
-    .portfolio-item.list .portfolio-img {
+    .learningPath-item.list .learningPath-img {
     }
 
-    .portfolio-item.grid .portfolio-img {
+    .learningPath-item.grid .learningPath-img {
     }
 
-    .portfolio-item.list .portfolio-texts {
+    .learningPath-item.list .learningPath-texts {
     }
 
-    .portfolio-item.grid .portfolio-texts {
+    .learningPath-item.grid .learningPath-texts {
     }
 }
 
@@ -539,19 +539,19 @@ header {
         color: #b3b3b3;
     }
 
-    .portfolios-container {
+    .LearningPaths-container {
     }
 
-    .portfolio-item.list .portfolio-img {
+    .learningPath-item.list .learningPath-img {
     }
 
-    .portfolio-item.grid .portfolio-img {
+    .learningPath-item.grid .learningPath-img {
     }
 
-    .portfolio-item.list .portfolio-texts {
+    .learningPath-item.list .learningPath-texts {
     }
 
-    .portfolio-item.grid .portfolio-texts {
+    .learningPath-item.grid .learningPath-texts {
     }
 }
 
@@ -577,19 +577,19 @@ header {
         color: #b3b3b3;
     }
 
-    .portfolios-container {
+    .LearningPaths-container {
     }
 
-    .portfolio-item.list .portfolio-img {
+    .learningPath-item.list .learningPath-img {
     }
 
-    .portfolio-item.grid .portfolio-img {
+    .learningPath-item.grid .learningPath-img {
     }
 
-    .portfolio-item.list .portfolio-texts {
+    .learningPath-item.list .learningPath-texts {
     }
 
-    .portfolio-item.grid .portfolio-texts {
+    .learningPath-item.grid .learningPath-texts {
         width: 100%;
     }
 }

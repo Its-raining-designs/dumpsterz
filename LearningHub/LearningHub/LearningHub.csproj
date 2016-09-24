@@ -75,12 +75,12 @@
     <Content Include="ng_app\common\Templates\loader.html" />
     <Content Include="ng_app\App.js" />
     <Content Include="ng_app\common\AppService.js" />
-    <Content Include="ng_app\components\portfolios\Partials\LearningHub-modal.html" />
-    <Content Include="ng_app\components\portfolios\Partials\portfolio-item.html" />
-    <Content Include="ng_app\components\portfolios\portfolios.controller.js" />
-    <Content Include="ng_app\components\portfolios\portfolios.html" />
-    <Content Include="ng_app\components\portfolios\portfolios.module.js" />
-    <Content Include="ng_app\components\portfolios\portfolios.service.js" />
+    <Content Include="ng_app\components\LearningPaths\Partials\learningPath-modal.html" />
+    <Content Include="ng_app\components\LearningPaths\Partials\learningPath-item.html" />
+    <Content Include="ng_app\components\LearningPaths\LearningPaths.controller.js" />
+    <Content Include="ng_app\components\LearningPaths\LearningPaths.html" />
+    <Content Include="ng_app\components\LearningPaths\LearningPaths.module.js" />
+    <Content Include="ng_app\components\LearningPaths\LearningPaths.service.js" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

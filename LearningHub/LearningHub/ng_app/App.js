@@ -2,21 +2,21 @@
 
 (function () {
     'use strict';
-    var OnePushApp = angular.module("OnePushApp", [
+    var LearningHubApp = angular.module("LearningHubApp", [
                     'ngRoute',
-                    'OnePushApp.portfolios'
+                    'LearningHubApp.LearningPaths'
     ])
                 
 
-    OnePushApp.config(['$routeProvider', '$compileProvider', '$locationProvider',
+    LearningHubApp.config(['$routeProvider', '$compileProvider', '$locationProvider',
                       function ($routeProvider, $compileProvider, $locationProvider) {
                           $routeProvider
                             .otherwise({
-                                redirectTo: '/Portfolios'
+                                redirectTo: '/LearningPaths'
                             });
                       }]);
 
-    OnePushApp.run(function ($rootScope,$window) {
+    LearningHubApp.run(function ($rootScope,$window) {
         console.log("App started successfully!");
     });
 

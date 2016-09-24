@@ -1,11 +1,11 @@
 (function () {
     "use strict";
-    angular.module('OnePushApp.portfolios.controllers', [])
-            .controller('PortfoliosController', PortfoliosController);
+    angular.module('LearningHubApp.LearningPaths.controllers', [])
+            .controller('LearningPathsController', LearningPathsController);
 
-    PortfoliosController.$inject = ['$rootScope', '$scope', '$route', '$location', '$timeout', '$interval', 'AppService', 'PortfoliosService', 'appConstants'];
+    LearningPathsController.$inject = ['$rootScope', '$scope', '$route', '$location', '$timeout', '$interval', 'AppService', 'LearningPathsService', 'appConstants'];
 
-    function PortfoliosController($rootScope, $scope, $route, $location, $timeout, $interval, AppService, PortfoliosService, appConstants) {
+    function LearningPathsController($rootScope, $scope, $route, $location, $timeout, $interval, AppService, LearningPathsService, appConstants) {
         var _this = this;
         _this.LayoutClass = 'grid';
         _this.newPortfolio = {
@@ -17,7 +17,7 @@
 
         window.scrollTo(0, 0);
         _this.AppService = AppService;
-        _this.fetchPortfolios = fetchPortfolios;
+        _this.fetchLearningPaths = fetchLearningPaths;
         _this.pushPortfolio = pushPortfolio;
         _this.openPushPopUp = openPushPopUp;
         _this.setLayout = setLayout;
@@ -27,14 +27,14 @@
         AppService.LoadTimer(1500);
 
 
-        function fetchPortfolios() {
-            var promiseObj = PortfoliosService.fetchPortfolios();
+        function fetchLearningPaths() {
+            var promiseObj = LearningPathsService.fetchLearningPaths();
             promiseObj.then(function success(data) {
                 
-                _this.portfolios = data.portfolios;
+                _this.LearningPaths = data.LearningPaths;
 
                 var dataForAutocomplete = {}
-                _this.portfolios.map(function (d) {
+                _this.LearningPaths.map(function (d) {
                     dataForAutocomplete[d.title] = "http://placehold.it/250x250";
                     dataForAutocomplete[d.url_address] = "http://placehold.it/250x250";
                     dataForAutocomplete[d.tag] = "http://placehold.it/250x250";
@@ -44,14 +44,14 @@
                 });
             },
             function error() {
-                Materialize.toast("Couldn't load portfolios!", 4000, "red")
+                Materialize.toast("Couldn't load LearningPaths!", 4000, "red")
             });
         }
         
         function pushPortfolio() {
 
             if (_this.newPortfolio.title == "") {
-                Materialize.toast("Enter a valid Titke for the Portfolio", 3000, "red");
+                Materialize.toast("Enter a valid Ticket for the Portfolio", 3000, "red");
                 return;
             }
             else if (_this.newPortfolio.url == "") {
@@ -63,11 +63,11 @@
                 return;
             }
             
-            var promiseObj = PortfoliosService.pushPortfolio(_this.newPortfolio);
+            var promiseObj = LearningPathsService.pushPortfolio(_this.newPortfolio);
             promiseObj.then(function success(data) {
-                $('#onepush-modal').closeModal();
+                $('#LearningHub-modal').closeModal();
                 Materialize.toast("Successfully executed!" + JSON.stringify(data), 4000, "cyan");
-                _this.fetchPortfolios();
+                _this.fetchLearningPaths();
             },
             function error(data) {
                 Materialize.toast(JSON.stringify(data), 10000, "red")
@@ -80,35 +80,35 @@
                 url: '',
                 tag:''
             }
-            $('#onepush-modal').openModal();
+            $('#LearningHub-modal').openModal();
         }
 
         function setLayout(layout) {
             _this.LayoutClass = layout;
         }
 
-        function setLike(portfolio) {
+        function setLike(learningPath) {
             
-            portfolio.likes = 0;
-            portfolio.likes = localStorage.getItem(portfolio.url_address);
-            if (portfolio.likes == null) {
-                portfolio.likes = 0;
+            learningPath.likes = 0;
+            learningPath.likes = localStorage.getItem(learningPath.url_address);
+            if (learningPath.likes == null) {
+                learningPath.likes = 0;
             }
-            portfolio.likes = parseInt(portfolio.likes) + 1;
-            localStorage.setItem(portfolio.url_address, portfolio.likes);
+            learningPath.likes = parseInt(learningPath.likes) + 1;
+            localStorage.setItem(learningPath.url_address, learningPath.likes);
         }
-        function getLikes(portfolio) {
+        function getLikes(learningPath) {
             
-            portfolio.likes = 0;
-            portfolio.likes = localStorage.getItem(portfolio.url_address);
-            if (portfolio.likes == null) {
-                portfolio.likes = 0;
+            learningPath.likes = 0;
+            learningPath.likes = localStorage.getItem(learningPath.url_address);
+            if (learningPath.likes == null) {
+                learningPath.likes = 0;
             }
-            return portfolio.likes;
+            return learningPath.likes;
 
         }
 
-        fetchPortfolios();
+        fetchLearningPaths();
 
     }
 

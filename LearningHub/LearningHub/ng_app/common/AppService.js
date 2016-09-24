@@ -2,7 +2,7 @@
 
 (function () {
     'use strict';
-    var AppService = angular.module('OnePushApp')
+    var AppService = angular.module('LearningHubApp')
     .factory('AppService', function ($rootScope, $http, $location, $timeout) {
 
 

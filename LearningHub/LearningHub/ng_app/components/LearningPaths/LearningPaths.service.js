@@ -1,34 +1,35 @@
 (function () {
-    angular.module('OnePushApp.portfolios.services',[])
-           .factory('PortfoliosService', PortfoliosService);
+    angular.module('LearningHubApp.LearningPaths.services',[])
+           .factory('LearningPathsService', LearningPathsService);
 
-    PortfoliosService.$inject = ["$timeout", "$q", "$http", "$timeout", "appConstants"];
+    LearningPathsService.$inject = ["$timeout", "$q", "$http", "$timeout", "appConstants"];
 
-    function PortfoliosService($timeout, $q, $http, $timeout, appConstants) {
+    function LearningPathsService($timeout, $q, $http, $timeout, appConstants) {
 
 
-        var PortfoliosService = {
-            fetchPortfolios: fetchPortfolios,
+        var LearningPathsService = {
+            fetchLearningPaths: fetchLearningPaths,
             pushPortfolio: pushPortfolio
         };
 
-        return PortfoliosService;
+        return LearningPathsService;
 
-        function fetchPortfolios(params) {
+        function fetchLearningPaths(params) {
             var def = $q.defer();
 
             var req = {
                 method: 'GET',
-                url: appConstants.OnePushBaseURL,
+                url: appConstants.LearningHubBaseURL,
                 headers: {},
                 params: {
                     type: 'json',
-                    query: 'list_websites'
+                    query: 'list_paths'
                 }
             }
+            
             $http(req).then(function (response) {
                 def.resolve({
-                    portfolios: response.data.websites
+                    LearningPaths: response.data.paths
                 });
             }, function (arg) {
                 def.reject(arg.data);
@@ -42,7 +43,7 @@
 
             var req = {
                 method: 'GET',
-                url: appConstants.OnePushBaseURL,
+                url: appConstants.LearningHubBaseURL,
                 headers: {},
                 params: {
                     type:'json',
@@ -55,26 +56,26 @@
             $http(req).then(function (response) {
                 if(response.status==200&&response.data.status==403){
                     def.reject({
-                        portfolio: "Error!" + response.data.message
+                        learningPath: "Error!" + response.data.message
                     });
 
                 }else if(response.status==200&&response.data.status==200) {
 
                     def.resolve({
-                        portfolio:  "Success!"+ response.data.message
+                        learningPath:  "Success!"+ response.data.message
                     });
 
                 }else {
 
                     def.resolve({
-                        portfolio: response.data
+                        learningPath: response.data
                     });
 
                 }
 
             }, function (arg) {
                 def.reject({
-                    portfolio: response.data
+                    learningPath: response.data
                 });
             });
 
