@@ -2,10 +2,10 @@
 
 (function () {
     'use strict'
-    var constants = angular.module("OnePushApp")
+    var constants = angular.module("LearningHubApp")
     .constant('appConstants', {
 
-        OnePushBaseURL: "https://hackerearth.0x10.info/api/one-push",
+        LearningHubBaseURL: "https://hackerearth.0x10.info/api/learning-paths",
 
     });
 })();

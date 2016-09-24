@@ -68,7 +68,7 @@
     <Content Include="Images\bg.png" />
     <Content Include="Images\bgg.png" />
     <Content Include="Images\chin2km.png" />
-    <Content Include="Index.html" />
+    <Content Include="index.html" />
     <Content Include="js_setup\jquery-2.1.1.min.js" />
     <Content Include="js_setup\materialize.min.js" />
     <Content Include="ng_app\common\Constants.js" />
@@ -98,6 +98,7 @@
     <Content Include="js_setup\angular-route.min.js.map" />
     <None Include="Properties\PublishProfiles\gitPub.pubxml" />
     <None Include="Properties\PublishProfiles\LearningHub_pubs.pubxml" />
+    <None Include="Properties\PublishProfiles\lernpubs.pubxml" />
     <None Include="Properties\PublishProfiles\x.pubxml" />
     <Content Include="README.md" />
     <None Include="Web.Debug.config">
