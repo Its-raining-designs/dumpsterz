@@ -2,14 +2,13 @@
     angular.module('LearningHubApp.LearningPaths.services',[])
            .factory('LearningPathsService', LearningPathsService);
 
-    LearningPathsService.$inject = ["$timeout", "$q", "$http", "$timeout", "appConstants"];
+    LearningPathsService.$inject = ["$q", "$http", "appConstants"];
 
-    function LearningPathsService($timeout, $q, $http, $timeout, appConstants) {
+    function LearningPathsService($q, $http, appConstants) {
 
 
         var LearningPathsService = {
-            fetchLearningPaths: fetchLearningPaths,
-            pushPortfolio: pushPortfolio
+            fetchLearningPaths: fetchLearningPaths
         };
 
         return LearningPathsService;
@@ -27,56 +26,14 @@
                 }
             }
             
-            $http(req).then(function (response) {
+            $http(req).then(function (response, status, headers, config) {
                 def.resolve({
-                    LearningPaths: response.data.paths
+                    LearningPaths: response.data.paths,
+                    quote_available: response.data.quote_available,
+                    quote_max: response.data.quote_max
                 });
             }, function (arg) {
                 def.reject(arg.data);
-            });
-
-            return def.promise;
-        }
-
-        function pushPortfolio(params) {
-            var def = $q.defer();
-
-            var req = {
-                method: 'GET',
-                url: appConstants.LearningHubBaseURL,
-                headers: {},
-                params: {
-                    type:'json',
-                    query:'push',
-                    title: params.title,
-                    url: params.url,
-                    tag: params.tag
-                }
-            }
-            $http(req).then(function (response) {
-                if(response.status==200&&response.data.status==403){
-                    def.reject({
-                        learningPath: "Error!" + response.data.message
-                    });
-
-                }else if(response.status==200&&response.data.status==200) {
-
-                    def.resolve({
-                        learningPath:  "Success!"+ response.data.message
-                    });
-
-                }else {
-
-                    def.resolve({
-                        learningPath: response.data
-                    });
-
-                }
-
-            }, function (arg) {
-                def.reject({
-                    learningPath: response.data
-                });
             });
 
             return def.promise;

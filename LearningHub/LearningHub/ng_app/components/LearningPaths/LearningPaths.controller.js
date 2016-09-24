@@ -3,27 +3,28 @@
     angular.module('LearningHubApp.LearningPaths.controllers', [])
             .controller('LearningPathsController', LearningPathsController);
 
-    LearningPathsController.$inject = ['$rootScope', '$scope', '$route', '$location', '$timeout', '$interval', 'AppService', 'LearningPathsService', 'appConstants'];
+    LearningPathsController.$inject = ['$timeout','AppService', 'LearningPathsService', 'appConstants'];
 
-    function LearningPathsController($rootScope, $scope, $route, $location, $timeout, $interval, AppService, LearningPathsService, appConstants) {
+    function LearningPathsController($timeout, AppService, LearningPathsService, appConstants) {
         var _this = this;
         _this.LayoutClass = 'grid';
-        _this.newPortfolio = {
-            title: '',
-            url: '',
-            tag: ''
-        }
         _this.query = "";
+
+        _this.sortByList = [
+            { category: "likes", display:"Likes", icon: "thumb_up" ,selected:"true"},
+            { category: "dislikes", display: "Dislikes", icon: "thumb_down", selected: "false" },
+            { category: "learner", display: "Learners", icon: "people", selected: "false" },
+            { category: "hours", display: "Duration", icon: "schedule", selected: "false" }
+        ];
 
         window.scrollTo(0, 0);
         _this.AppService = AppService;
         _this.fetchLearningPaths = fetchLearningPaths;
-        _this.pushPortfolio = pushPortfolio;
-        _this.openPushPopUp = openPushPopUp;
         _this.setLayout = setLayout;
         _this.setLike = setLike;
         _this.getLikes = getLikes;
-
+        _this.sortList = sortList;
+        //Aritificial wait
         AppService.LoadTimer(1500);
 
 
@@ -35,9 +36,10 @@
 
                 var dataForAutocomplete = {}
                 _this.LearningPaths.map(function (d) {
-                    dataForAutocomplete[d.title] = "http://placehold.it/250x250";
-                    dataForAutocomplete[d.url_address] = "http://placehold.it/250x250";
-                    dataForAutocomplete[d.tag] = "http://placehold.it/250x250";
+                    var tags = d.tags.split(",").map(function (tag) {
+                        dataForAutocomplete[tag] = "http://placehold.it/250x250";
+                    })
+                    
                 });
                 $('input.autocomplete').autocomplete({
                     data: dataForAutocomplete
@@ -47,64 +49,71 @@
                 Materialize.toast("Couldn't load LearningPaths!", 4000, "red")
             });
         }
-        
-        function pushPortfolio() {
-
-            if (_this.newPortfolio.title == "") {
-                Materialize.toast("Enter a valid Ticket for the Portfolio", 3000, "red");
-                return;
-            }
-            else if (_this.newPortfolio.url == "") {
-                Materialize.toast("Enter a Valid URL", 3000, "red");
-                return;
-            }
-            else if (_this.newPortfolio.tag == "") {
-                Materialize.toast("Enter a tag", 3000, "red");
-                return;
-            }
-            
-            var promiseObj = LearningPathsService.pushPortfolio(_this.newPortfolio);
-            promiseObj.then(function success(data) {
-                $('#LearningHub-modal').closeModal();
-                Materialize.toast("Successfully executed!" + JSON.stringify(data), 4000, "cyan");
-                _this.fetchLearningPaths();
-            },
-            function error(data) {
-                Materialize.toast(JSON.stringify(data), 10000, "red")
-            });
-        }
-
-        function openPushPopUp() {
-            _this.newPortfolio = {
-                title: '',
-                url: '',
-                tag:''
-            }
-            $('#LearningHub-modal').openModal();
-        }
 
         function setLayout(layout) {
             _this.LayoutClass = layout;
         }
 
-        function setLike(learningPath) {
+        function setLike(learningPath,vote) {
             
             learningPath.likes = 0;
-            learningPath.likes = localStorage.getItem(learningPath.url_address);
+            learningPath.likes = localStorage.getItem("like_"+learningPath.id);
             if (learningPath.likes == null) {
                 learningPath.likes = 0;
             }
-            learningPath.likes = parseInt(learningPath.likes) + 1;
-            localStorage.setItem(learningPath.url_address, learningPath.likes);
+
+            learningPath.dislikes = 0;
+            learningPath.dislikes = localStorage.getItem("dislike_" + learningPath.id);
+            if (learningPath.dislikes == null) {
+                learningPath.dislikes = 0;
+            }
+
+            if (vote) {
+                learningPath.likes = parseInt(learningPath.likes) + 1;
+                localStorage.setItem("like_" + learningPath.id, learningPath.likes);
+            }
+            else {
+                learningPath.dislikes = parseInt(learningPath.dislikes) + 1;
+                localStorage.setItem("dislike_" + learningPath.id, learningPath.dislikes);
+            }
+            
+            
         }
-        function getLikes(learningPath) {
+
+        function getLikes(learningPath,vote) {
             
-            learningPath.likes = 0;
-            learningPath.likes = localStorage.getItem(learningPath.url_address);
-            if (learningPath.likes == null) {
+            if (vote) {
                 learningPath.likes = 0;
+                learningPath.likes = localStorage.getItem("like_" + learningPath.id);
+                if (learningPath.likes == null) {
+                    learningPath.likes = 0;
+                }
+                return learningPath.likes;
             }
-            return learningPath.likes;
+            else {
+                learningPath.dislikes = 0;
+                learningPath.dislikes = localStorage.getItem("dislike_" + learningPath.id);
+                if (learningPath.dislikes == null) {
+                    learningPath.dislikes = 0;
+                }
+                return learningPath.dislikes;
+            }
+
+
+
+        }
+
+
+        function sortList(sortItem) {
+
+            AppService.ShowLoader();
+            $timeout(function () {
+                _this.LearningPaths.sort(function (a, b) {
+                    return parseInt(b[sortItem.category]) - parseInt(a[sortItem.category]);
+                })
+                AppService.HideLoader();
+            },500)
+
 
         }
 

@@ -33,19 +33,30 @@
         </header>
         <!--Navigation and login Sidebar-->
         <div class="leftside-nav">
-            <a href="#/" class="LearningHub-logo"><i class="material-icons">games</i><h4>Learning Hub</h4></a><br />
+            <a href="#/" class="LearningHub-logo"><i class="material-icons">grade</i><h4>Springboard</h4></a><br />
             <div class="LearningHub-desc">one stop hub for all the learning paths!</div>
 
+
+            <div class="layout-btns-grid">
+                <h6>Choose a layout</h6>
+                <i class="material-icons" ng-class="{'active':learningPathVM.LayoutClass=='grid'}" ng-click="learningPathVM.setLayout('grid')">view_module</i>
+                <i class="material-icons" ng-class="{'active':learningPathVM.LayoutClass=='list'}" ng-click="learningPathVM.setLayout('list')">storage</i>
+            </div>
+
+            <div class="sort-btns-grid">
+                <h6>Sort by</h6>
+                <form action="#">
+                    <p ng-repeat="item in learningPathVM.sortByList" ng-click="learningPathVM.sortList(item)">
+                        <input name="group1" type="radio" id="{{item.category}}" ng-model="item.selected" ng-value="true" />
+                        <label for="{{item.category}}"><i class="material-icons">{{item.icon}}</i> {{item.display}} </label>
+                    </p>
+                </form>
+            </div>
+
         </div>
 
 
-        <!--This is where different route's view are displayed-->
-        <div class="layout-btns-grid">
-            <h6>Choose a layout</h6>
-            <i class="material-icons" ng-class="{'active':learningPathVM.LayoutClass=='grid'}" ng-click="learningPathVM.setLayout('grid')">view_module</i>
 
-            <i class="material-icons" ng-class="{'active':learningPathVM.LayoutClass=='list'}" ng-click="learningPathVM.setLayout('list')">storage</i>
-        </div>
 
         <!--This is where different route's view are displayed-->
         <!--<div ng-view></div>-->
@@ -55,40 +66,48 @@
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12 m12 l4">
-                        <h4 class="zero-margin">LearningPaths</h4>
+                        <h4 class="zero-margin">Learning Paths</h4>
                     </div>
                     <div class="input-field col col s12 m12 l8">
                         <i class="material-icons prefix">search</i>
                         <input id="query" type="text" ng-model="learningPathVM.query" value="{{learningPathVM.query}}" class="autocomplete">
                         <label for="query">Search</label>
 
-
-
                     </div>
                 </div>
             </form>
-            <div class="LearningPaths-scroll">
+            <div class="LearningPaths-scroll" ng-cloak>
 
-                <div ng-repeat="learningPath in learningPathVM.LearningPaths | filter:learningPathVM.query">
+                <div ng-cloak ng-repeat="learningPath in learningPathVM.LearningPaths | filter:learningPathVM.query">
                     <div class="learningPath-item" ng-class="learningPathVM.LayoutClass">
                         <div class="like-btns-grid">
 
-                            <i class="material-icons" ng-click="learningPathVM.setLike(learningPath)">thumb_up</i>
-                            <h6>{{learningPathVM.getLikes(learningPath)}}</h6>
+                            <i class="material-icons" ng-click="learningPathVM.setLike(learningPath,true)">thumb_up</i>
+                            <h6>{{learningPathVM.getLikes(learningPath,true)}}</h6>
+                            <i class="material-icons" ng-click="learningPathVM.setLike(learningPath,false)">thumb_down</i>
+                            <h6>{{learningPathVM.getLikes(learningPath,false)}}</h6>
 
                         </div>
-                        <img class="learningPath-img" src="{{learningPath.favicon_image}}" />
+                        <img class="learningPath-img" src="{{learningPath.image}}" />
                         <div class="learningPath-texts">
-                            <h4>{{learningPath.title}}</h4>
-
+                            <h4>{{learningPath.name}}</h4>
+                            <h6>{{learningPath.description}}</h6>
                             <div class="long-text">
-                                <span>
+                                <h6>
+                                    <i class="material-icons">people</i>
+                                    {{learningPath.learner}} Learners
+                                </h6>
+                                <h6>
+                                    <i class="material-icons">schedule</i>
+                                    {{learningPath.hours}} Hours
+                                </h6>
+                                <h6>
                                     <i class="material-icons">bookmark_border</i>
-                                    {{learningPath.tag}}
-                                </span>
-                                |<a href="{{learningPath.url_address}}" target="_blank">
-                                    <i class="material-icons">link</i> {{learningPath.url_address}}
-                                </a>
+                                    {{learningPath.tags}}
+                                </h6>
+                                <h6 href="{{learningPath.url_address}}" target="_blank">
+                                    <a href="{{learningPath.sign_up}}" target="_blank"><i class="material-icons">link</i> View Curriculum</a>
+                                </h6>
                             </div>
                         </div>
                         <div class="clearFloats"></div>
@@ -99,49 +118,7 @@
 
             </div>
 
-
-
-            <div class="fixed-action-btn  horizontal" style="bottom: 75px; right: 35px;">
-                <a class="btn-floating btn-large waves-effect waves-light light-blue darken-4" ng-click="learningPathVM.openPushPopUp()">
-                    <i class="large material-icons">add</i>
-                </a>
-            </div>
         </div>
-
-        <div>
-            <!--Comment Modal -->
-            <div id="LearningHub-modal" class="modal">
-                <div class="modal-content">
-                    <h4>+ Push Website</h4>
-                    <div class="row">
-                        <form class="col s12">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">class</i>
-                                    <input id="icon_prefix" type="text" class="validate" ng-model="learningPathVM.newPortfolio.title">
-                                    <label for="icon_prefix">Title</label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">link</i>
-                                    <input id="icon_prefix" type="text" class="validate" ng-model="learningPathVM.newPortfolio.url">
-                                    <label for="icon_prefix">Webisite URL</label>
-                                </div>
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">bookmark_border</i>
-                                    <input id="icon_prefix" type="text" class="validate" ng-model="learningPathVM.newPortfolio.tag">
-                                    <label for="icon_prefix">Tag</label>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <a ng-click="learningPathVM.pushPortfolio()" class="waves-effect waves-light btn blue"><i class="material-icons left">done</i>Push Website</a>
-                    <a class="modal-action modal-close waves-effect waves-light btn red"><i class="material-icons left">arrow_back</i>Cancel </a>
-                </div>
-            </div>
-        </div>
-
 
 
     </div>
