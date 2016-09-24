@@ -17,7 +17,7 @@
             { category: "hours", display: "Duration", icon: "schedule", selected: "false" }
         ];
 
-        window.scrollTo(0, 0);
+        
         _this.AppService = AppService;
         _this.fetchLearningPaths = fetchLearningPaths;
         _this.setLayout = setLayout;
@@ -105,6 +105,9 @@
 
 
         function sortList(sortItem) {
+
+            var elmnt = document.getElementById("LearningPaths-scroll");
+            elmnt.scrollTop = 0;
 
             AppService.ShowLoader();
             $timeout(function () {
