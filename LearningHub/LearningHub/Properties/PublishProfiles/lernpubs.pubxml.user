@@ -115,7 +115,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/15/2016 11:35:51</publishTime>
     </File>
     <File Include="README.md">
-      <publishTime>09/24/2016 20:34:26</publishTime>
+      <publishTime>09/24/2016 20:42:29</publishTime>
     </File>
     <File Include="Web.config">
       <publishTime>09/24/2016 20:24:43</publishTime>
