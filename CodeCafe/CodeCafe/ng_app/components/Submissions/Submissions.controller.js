@@ -12,10 +12,10 @@
 
         _this.filterByList = [
             { category: "accepted", display: "Accepted", icon: "thumb_up", selected: "false" },
-            { category: "skipped", display: "Skipped", icon: "thumb_down", selected: "false" },
-            { category: "exceeded", display: "Memmory/Time exceeded", icon: "thumb_down", selected: "false" },
-            { category: "runtime", display: "Runtime/Compilation error", icon: "thumb_down", selected: "false" },
-            { category: "wrong", display: "Wrong answer", icon: "thumb_down", selected: "false" }
+            { category: "skipped", display: "Skipped", icon: "swap_horiz", selected: "false" },
+            { category: "exceeded", display: "Memmory/Time exceeded", icon: "timer_off", selected: "false" },
+            { category: "runtime", display: "Runtime/Compilation error", icon: "rotate_left", selected: "false" },
+            { category: "wrong", display: "Wrong answer", icon: "clear", selected: "false" }
         ];
         _this.pageinationIndexs = []
         
@@ -25,8 +25,6 @@
         _this.filterList = filterList;
         _this.goFullScreen = goFullScreen;
         _this.goToPage = goToPage;
-        //Aritificial wait
-        AppService.LoadTimer(1500);
 
 
         for (var i = 1; i <= 1347; i++) {
@@ -39,7 +37,10 @@
            
         }
 
-
+        /**
+         * Fetches submission based of filter
+         * @param {params} page number
+         */
         function fetchSubmissions(params) {
             AppService.ShowLoader();
             var promiseObj = SubmissionsService.fetchSubmissions(params);
@@ -50,6 +51,7 @@
                 _this.Submissions.map(function (sub) {
                     sub.isAvail = true;
                 });
+                filterList();
 
                 $timeout(function () {
                     $('.tooltipped').tooltip({ delay: 50 });
@@ -63,6 +65,10 @@
             });
         }
 
+        /**
+         * Fetches Language Images
+         * @param {params} page number
+         */
         function fetchLanguageImages() {
             var promiseObj = SubmissionsService.fetchLanguageImages();
             promiseObj.then(function success(response) {
@@ -77,12 +83,18 @@
         }
         
 
-
+        /**
+         * Set Grid or List Layout
+         * @param {layout} 'list' or 'grid'
+         */
         function setLayout(layout) {
             _this.LayoutClass = layout;
         }
 
-
+        /**
+         * Code goes Full-SCreen
+         * @param {element} element which got clicked
+         */
         function goFullScreen(elem) {
             var codeElement = elem.currentTarget.parentElement.nextElementSibling.childNodes[5].firstElementChild
             if (screenfull.enabled) {
@@ -90,6 +102,10 @@
             }
         }
 
+        /**
+         * Go To for Pgination
+         * @param {page} page object
+         */
         function goToPage(page,evt) {
             _this.pageinationIndexs.map(function (pg) {pg.active = false});
             page.active = true;
@@ -106,12 +122,14 @@
             document.getElementById('pagination-container').scrollTop = topPos-8;
             $timeout(function () {
                 fetchSubmissions(params);
-            },100)
+            },300)
 
         }
 
-
-        function filterList(sortItem) {
+        /**
+         * Filters the current Submissions
+         */
+        function filterList() {
             var elmnt = document.getElementById("Submissions-scroll");
             elmnt.scrollTop = 0;
 
@@ -148,6 +166,8 @@
 
         }
 
+
+        //Initial page setup with data
         fetchSubmissions({page:1});
         fetchLanguageImages();
     }

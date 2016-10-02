@@ -18,7 +18,7 @@ body {
     line-height: 1.231;
     background-image: url('../Images/1.png');
     background-repeat: repeat;
-    overflow:hidden;
+    overflow: hidden;
 }
 
 
@@ -96,16 +96,17 @@ label {
     color: white;
     cursor: pointer !important;
 }
-.CodeCafe-logo:before {
-    content: ' ';
-    display: block;
-    position: absolute;
-    width: 50px;
-    height: 49px;
-    background-image: url(../Images/cognizant.png);
-    background-size: 100%;
-    transition:all 0.3s ease-in-out
-}
+
+    .CodeCafe-logo:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        width: 50px;
+        height: 49px;
+        background-image: url(../Images/cognizant.png);
+        background-size: 100%;
+        transition: all 0.3s ease-in-out;
+    }
 
     .CodeCafe-logo h4 {
         display: inline;
@@ -221,7 +222,7 @@ header {
 
 .Submissions-container {
     position: absolute;
-    padding: 5px;
+    padding: 0;
     padding-left: 389px;
     width: 100%;
     height: calc(100% - 38px);
@@ -230,44 +231,49 @@ header {
     overflow-x: hidden;
     overflow-y: hidden;
 }
+.Submissions-container form {
+    height: 100px;
+    overflow:hidden;
+}
 
 .pagination {
     padding: 11px 25px;
-    height: 47px;
+    height: 50px;
     overflow: auto;
-    transition:all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     position: absolute;
     background: #1B1B1B;
     z-index: 999999999;
 }
-.pagination:hover {
 
-height: 150px;
+    .pagination:hover {
+        height: 150px;
+        margin-top: -100px;
+    }
 
-margin-top: -100px;
-}
+    .pagination li.active {
+        background-color: #097409 !important;
+    }
 
-.pagination li.active {
-    background-color: #097409 !important;
-}
-.pagination li:hover {
-    background-color: #097409 !important;
-}
-.pagination li:hover a {
-    color: #fff !important;
-}
+    .pagination li:hover {
+        background-color: #097409 !important;
+    }
 
-.pagination li a {
-    color: #0C770C !important;
-}
-.pagination li.active a {
-    color: #fff !important;
-}
+        .pagination li:hover a {
+            color: #fff !important;
+        }
+
+    .pagination li a {
+        color: #0C770C !important;
+    }
+
+    .pagination li.active a {
+        color: #fff !important;
+    }
 
 #Submissions-scroll {
     width: 100%;
-    padding: 0px 15px 40px 0px;
-    height: 83%;
+    height: calc(100% - 150px);
     overflow-y: auto;
     overflow-x: hidden;
     box-shadow: inset 0 9px 28px -14px rgba(0, 0, 0, 0.48);
@@ -364,9 +370,7 @@ margin-top: -100px;
         display: inline;
         vertical-align: middle;
     }
-.submission-texts   .pre-container{
 
-}
 
 .submission-texts .pre-container {
     box-shadow: inset 0px 0px 55px 15px rgba(0, 0, 0, 0.47);
@@ -378,6 +382,7 @@ margin-top: -100px;
     overflow-x: hidden;
     border: solid 1px rgba(8, 115, 8, 0.24);
 }
+
 .submission-texts pre {
     box-shadow: inset 0px 0px 55px 15px rgba(0, 0, 0, 0.47);
     padding: 25px;
@@ -432,7 +437,7 @@ margin-top: -100px;
 
         .layout-btns-grid i.active {
             background: rgba(255, 255, 255, 0.6);
-            color: rgb(29, 113, 118);
+            color: rgb(1, 108, 1);
         }
 
 .sort-btns-grid {
@@ -551,11 +556,9 @@ margin-top: -100px;
         padding-top: 76px;
         z-index: 9999;
     }
-    #Submissions-scroll{
 
-height: 76%;
-
-}
+    #Submissions-scroll {
+    }
 
     .submissions-item.grid {
         width: 100%;
@@ -605,11 +608,9 @@ height: 76%;
         padding-top: 91px;
         z-index: 9999;
     }
-        #Submissions-scroll{
 
-height: 75%;
-
-}
+    #Submissions-scroll {
+    }
 
     .layout-btns-grid {
         position: absolute;
@@ -660,11 +661,11 @@ height: 75%;
         left: 20px;
         color: #b3b39f;
     }
+
     .Submissions-container {
-
     }
-        #Submissions-scroll{
 
+    #Submissions-scroll {
     }
 }
 
@@ -697,15 +698,10 @@ height: 75%;
         left: 20px;
         color: #b3b39f;
     }
+
     .Submissions-container {
-
     }
-    #Submissions-scroll{
 
+    #Submissions-scroll {
     }
-}
-
-
-@media only screen and (min-width:1200px) {
-
 }

@@ -45,9 +45,9 @@
             </div>
 
             <div class="sort-btns-grid">
-                <h6>Sort by</h6>
+                <h6>Filter by status</h6>
                 <form action="#">
-                    <div ng-repeat="item in submissionsVM.filterByList" ng-click="submissionsVM.filterList(item)">
+                    <div ng-repeat="item in submissionsVM.filterByList" ng-click="submissionsVM.filterList()">
                         <input name="group1" type="checkbox" id="{{item.category}}" ng-model="item.selected" ng-value="true" />
                         <label for="{{item.category}}"><i class="material-icons">{{item.icon}}</i> {{item.display}} </label>
                     </div>
@@ -97,23 +97,23 @@
 
                             <div class="long-text">
                                 <h6>
-                                    <i class="material-icons">people</i>
-                                    {{submission.metadata.users_attempted}} attempted
+                                    <i class="material-icons">bookmark_border</i>
+                                    {{submission.language}}
                                 </h6>
                                 <h6 ng-init="submission.stars={5:[1,2,3,4,5],4:[1,2,3,4],3:[1,2,3],2:[1,2],1:[1],0:[0]}">
                                     <i class="material-icons" ng-repeat="str in submission.stars[submission.metadata.rating]">star</i>
                                     {{submission.metadata.rating}} Stars
                                 </h6>
                                 <h6>
-                                    <i class="material-icons">bookmark_border</i>
-                                    {{submission.language}}
+                                    <i class="material-icons">people</i>
+                                    {{submission.metadata.users_attempted}} attempted
                                 </h6>
                                 <h6>
-                                    <i class="material-icons">wb_sunny</i>
+                                    <i class="material-icons">verified_user</i>
                                     {{submission.metadata.level}} Level
                                 </h6>
                                 <h6>
-                                    <i class="material-icons">bookmark_border</i>
+                                    <i class="material-icons">play_arrow</i>
                                     {{submission.compiler_status}}
                                 </h6>
 

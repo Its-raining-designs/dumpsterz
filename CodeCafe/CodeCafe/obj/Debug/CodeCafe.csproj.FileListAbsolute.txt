@@ -5,3 +5,10 @@ D:\Work\Apps\Git-Try-Outs\CodeCafe\CodeCafe\bin\CodeCafe.pdb
 D:\Work\Apps\Git-Try-Outs\CodeCafe\CodeCafe\obj\Debug\CodeCafe.csprojResolveAssemblyReference.cache
 D:\Work\Apps\Git-Try-Outs\CodeCafe\CodeCafe\obj\Debug\CodeCafe.dll
 D:\Work\Apps\Git-Try-Outs\CodeCafe\CodeCafe\obj\Debug\CodeCafe.pdb
+E:\Github\Try-Outs\CodeCafe\CodeCafe\bin\ApplicationInsights.config
+E:\Github\Try-Outs\CodeCafe\CodeCafe\bin\CodeCafe.dll.config
+E:\Github\Try-Outs\CodeCafe\CodeCafe\bin\CodeCafe.dll
+E:\Github\Try-Outs\CodeCafe\CodeCafe\bin\CodeCafe.pdb
+E:\Github\Try-Outs\CodeCafe\CodeCafe\obj\Debug\CodeCafe.csprojResolveAssemblyReference.cache
+E:\Github\Try-Outs\CodeCafe\CodeCafe\obj\Debug\CodeCafe.dll
+E:\Github\Try-Outs\CodeCafe\CodeCafe\obj\Debug\CodeCafe.pdb
