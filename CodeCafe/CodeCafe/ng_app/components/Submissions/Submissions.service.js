@@ -18,7 +18,7 @@
             var def = $q.defer();
             var req = {
                 method: 'GET',
-                url: appConstants.LearningHubBaseURL,
+                url: appConstants.CodeCafeBaseURL,
                 headers: {},
                 params: {
                     type: 'json',
@@ -45,7 +45,7 @@
 
             var req = {
                 method: 'GET',
-                url: appConstants.LearningHubBaseURL,
+                url: appConstants.CodeCafeBaseURL,
                 headers: {},
                 params: {
                     type: 'json',

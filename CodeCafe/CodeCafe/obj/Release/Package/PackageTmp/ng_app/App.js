@@ -2,22 +2,27 @@
 
 (function () {
     'use strict';
-    var LearningHubApp = angular.module("LearningHubApp", [
+    var CodeCafeApp = angular.module("CodeCafeApp", [
                     'ngRoute',
-                    'LearningHubApp.LearningPaths'
+                    'CodeCafeApp.Submissions'
     ])
                 
 
-    LearningHubApp.config(['$routeProvider', '$compileProvider', '$locationProvider',
+    CodeCafeApp.config(['$routeProvider', '$compileProvider', '$locationProvider',
                       function ($routeProvider, $compileProvider, $locationProvider) {
                           $routeProvider
                             .otherwise({
-                                redirectTo: '/LearningPaths'
+                                redirectTo: '/Submissions'
                             });
                       }]);
 
-    LearningHubApp.run(function ($rootScope,$window) {
+    CodeCafeApp.run(function ($rootScope,$window) {
         console.log("App started successfully!");
+        var db = openDatabase('mydb', '1.0', 'Test DB', 2 * 1024 * 1024);
+
+        db.transaction(function (tx) {
+            tx.executeSql('CREATE TABLE IF NOT EXISTS LOGS (id unique, log)');
+        });
     });
 
 })();

@@ -1,9 +1,9 @@
-# O_n_e_P_u_s_h
+# C_o_d_e_C_a_f_e
 
-O_n_e_P_u_s_h Toppr challenge developer by Chintu Kishen KM
-
-
-Visit the output here: https://its-raining-designs.github.io/L_e_a_r_n_i_n_g_H_u_b/
+C_o_d_e_C_a_f_e Cognizant Challenge developed by Chintu Kishen KM
 
 
-Visit my learningPath here: http://www.Chin2km.com
+Visit the output here: https://its-raining-designs.github.io/C_o_d_e_C_a_f_e/
+
+
+Visit my submissions here: http://www.Chin2km.com

@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\mechi\Desktop\PubZZZ\Cognizant_Chin2km\git</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="bin/CodeCafe.dll">
+      <publishTime>10/02/2016 22:14:44</publishTime>
+    </File>
+    <File Include="css/common.css">
+      <publishTime>10/02/2016 21:42:32</publishTime>
+    </File>
+    <File Include="css/materialize.min.css">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="Images/1.png">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="Images/bg.png">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="Images/chin2km.png">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="Images/cognizant.png">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="index.html">
+      <publishTime>10/02/2016 22:05:07</publishTime>
+    </File>
+    <File Include="js_setup/angular-mocks.js">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="js_setup/angular-route.js">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="js_setup/angular-route.min.js">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="js_setup/angular-route.min.js.map">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="js_setup/angular.js">
+      <publishTime>10/02/2016 21:24:45</publishTime>
+    </File>
+    <File Include="js_setup/angular.min.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="js_setup/angular.min.js.map">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="js_setup/jasmine/boot.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="js_setup/jasmine/console.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="js_setup/jasmine/jasmine-html.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="js_setup/jasmine/jasmine.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="js_setup/jquery-2.1.1.min.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="js_setup/materialize.min.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="js_setup/screenfull.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="ng_app/App.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="ng_app/common/AppService.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="ng_app/common/Constants.js">
+      <publishTime>10/02/2016 22:05:33</publishTime>
+    </File>
+    <File Include="ng_app/common/Templates/loader.html">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="ng_app/components/Submissions/Partials/learningPath-item.html">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="ng_app/components/Submissions/Partials/learningPath-modal.html">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="ng_app/components/Submissions/Submissions.controller.js">
+      <publishTime>10/02/2016 22:01:03</publishTime>
+    </File>
+    <File Include="ng_app/components/Submissions/Submissions.html">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="ng_app/components/Submissions/Submissions.module.js">
+      <publishTime>10/02/2016 21:24:46</publishTime>
+    </File>
+    <File Include="ng_app/components/Submissions/Submissions.service.js">
+      <publishTime>10/02/2016 22:05:33</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>10/02/2016 21:24:47</publishTime>
+    </File>
+    <File Include="README.md">
+      <publishTime>10/02/2016 22:08:39</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/02/2016 22:14:46</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

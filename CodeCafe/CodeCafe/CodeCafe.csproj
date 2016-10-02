@@ -98,6 +98,7 @@
     <Content Include="js_setup\jasmine\jasmine.js" />
     <Content Include="js_setup\angular.min.js.map" />
     <Content Include="js_setup\angular-route.min.js.map" />
+    <None Include="Properties\PublishProfiles\codecafe.pubxml" />
     <None Include="Properties\PublishProfiles\gitPub.pubxml" />
     <None Include="Properties\PublishProfiles\CodeCafe_pubs.pubxml" />
     <None Include="Properties\PublishProfiles\lernpubs.pubxml" />

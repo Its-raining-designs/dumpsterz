@@ -2,7 +2,7 @@
 
 (function () {
     'use strict';
-    var AppService = angular.module('LearningHubApp')
+    var AppService = angular.module('CodeCafeApp')
     .factory('AppService', function ($rootScope, $http, $location, $timeout) {
 
 
@@ -26,7 +26,6 @@
                         })
                     }, 0);
                 })();
-                setTimeout(SetRippleEffectHandle, 0);
 
             },
             LoadTimer: function (time, message) {

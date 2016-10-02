@@ -2,10 +2,10 @@
 
 (function () {
     'use strict'
-    var constants = angular.module("LearningHubApp")
+    var constants = angular.module("CodeCafeApp")
     .constant('appConstants', {
 
-        LearningHubBaseURL: "https://hackerearth.0x10.info/api/learning-paths",
+        CodeCafeBaseURL: "http://hackerearth.0x10.info/api/ctz_coders",
 
     });
 })();
