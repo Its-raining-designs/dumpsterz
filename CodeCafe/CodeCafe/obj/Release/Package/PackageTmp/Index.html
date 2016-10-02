@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html ng-app="LearningHubApp">
+<head>
+    <title>LearningHub</title>
+    <!--Meta-->
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+    <meta http-equiv='Cache-control' content='no-cache' />
+    <meta http-equiv='Expires' content='-1' />
+    <meta http-equiv='pragma' content='no-cache' />
+
+
+    <!--FAVICON-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+
+    <!--CSS-->
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/materialize.min.css" rel="stylesheet" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+</head>
+<body>
+    <div class="page-wrap" ng-controller="LearningPathsController as learningPathVM">
+
+        <header>
+            <!--Polygon shaper side nav backbground-->
+        </header>
+        <!--Navigation and login Sidebar-->
+        <div class="leftside-nav">
+            <a href="#/" class="LearningHub-logo"><i class="material-icons">grade</i><h4>Springboard</h4></a><br />
+            <div class="LearningHub-desc">one stop hub for all the learning paths!</div>
+
+
+            <div class="layout-btns-grid">
+                <h6>Choose a layout</h6>
+                <i class="material-icons" ng-class="{'active':learningPathVM.LayoutClass=='grid'}" ng-click="learningPathVM.setLayout('grid')">view_module</i>
+                <i class="material-icons" ng-class="{'active':learningPathVM.LayoutClass=='list'}" ng-click="learningPathVM.setLayout('list')">storage</i>
+            </div>
+
+            <div class="sort-btns-grid">
+                <h6>Sort by</h6>
+                <form action="#">
+                    <p ng-repeat="item in learningPathVM.sortByList" ng-click="learningPathVM.sortList(item)">
+                        <input name="group1" type="radio" id="{{item.category}}" ng-model="item.selected" ng-value="true" />
+                        <label for="{{item.category}}"><i class="material-icons">{{item.icon}}</i> {{item.display}} </label>
+                    </p>
+                </form>
+            </div>
+
+        </div>
+
+
+
+
+        <!--This is where different route's view are displayed-->
+        <!--<div ng-view></div>-->
+        <div class="LearningPaths-container">
+
+
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s12 m12 l4">
+                        <h4 class="zero-margin">Learning Paths</h4>
+                    </div>
+                    <div class="input-field col col s12 m12 l8">
+                        <i class="material-icons prefix">search</i>
+                        <input id="query" type="text" ng-model="learningPathVM.query" value="{{learningPathVM.query}}" class="autocomplete">
+                        <label for="query">Search</label>
+
+                    </div>
+                </div>
+            </form>
+            <div id="LearningPaths-scroll" ng-cloak>
+
+                <div ng-cloak ng-repeat="learningPath in learningPathVM.LearningPaths | filter:learningPathVM.query">
+                    <div class="learningPath-item" ng-class="learningPathVM.LayoutClass">
+                        <div class="like-btns-grid">
+
+                            <i class="material-icons" ng-click="learningPathVM.setLike(learningPath,true)">thumb_up</i>
+                            <h6>{{learningPathVM.getLikes(learningPath,true)}}</h6>
+                            <i class="material-icons" ng-click="learningPathVM.setLike(learningPath,false)">thumb_down</i>
+                            <h6>{{learningPathVM.getLikes(learningPath,false)}}</h6>
+
+                        </div>
+                        <img class="learningPath-img" src="{{learningPath.image}}" />
+                        <div class="learningPath-texts">
+                            <h4>{{learningPath.name}}</h4>
+                            <h6>{{learningPath.description}}</h6>
+                            <div class="long-text">
+                                <h6>
+                                    <i class="material-icons">people</i>
+                                    {{learningPath.learner}} Learners
+                                </h6>
+                                <h6>
+                                    <i class="material-icons">schedule</i>
+                                    {{learningPath.hours}} Hours
+                                </h6>
+                                <h6>
+                                    <i class="material-icons">bookmark_border</i>
+                                    {{learningPath.tags}}
+                                </h6>
+                                <h6 href="{{learningPath.url_address}}" target="_blank">
+                                    <a href="{{learningPath.sign_up}}" target="_blank"><i class="material-icons">link</i> View Curriculum</a>
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="clearFloats"></div>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <footer class="site-footer">
+        <div class="content">
+            <span class="copyright"> © </span><span>
+                2016 <a href="http://www.chin2km.com" target="_blank">
+                    <img src="Images/chin2km.png" class="chin2logo" />Chin2km
+                </a>
+                Media, Inc. All rights unfortunately not reserved.
+            </span>
+        </div>
+    </footer>
+
+
+    <!--<div ng-show="loaderVisibility" ng-include="'/ng_app/common/Templates/loader.html'"></div>-->
+    <div ng-show="loaderVisibility">
+        <div id="LoaderAnime">
+            <div>
+                <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-red">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-yellow">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-green">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+                <span>Just a moment...</span>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!--JS-->
+    <script src="js_setup/angular.js"></script>
+    <script src="js_setup/angular-route.js"></script>
+    <script src="js_setup/jquery-2.1.1.min.js"></script>
+    <script src="js_setup/materialize.min.js"></script>
+
+
+    <script src="ng_app/App.js"></script>
+    <script src="ng_app/common/AppService.js"></script>
+    <script src="ng_app/common/Constants.js"></script>
+
+    <!--LearningHub-->
+    <script src="ng_app/components/LearningPaths/LearningPaths.service.js"></script>
+    <script src="ng_app/components/LearningPaths/LearningPaths.controller.js"></script>
+    <script src="ng_app/components/LearningPaths/LearningPaths.module.js"></script>
+
+
+</body>
+</html>

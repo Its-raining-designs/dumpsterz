@@ -1,0 +1,711 @@
+* {
+    margin: 0;
+}
+
+html {
+    height: 100%;
+    font-size: 100%;
+    overflow-y: hidden;
+    font-family: 'Cairo',sans-serif !important;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    height: 99.9% !important;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.231;
+    background-image: url('../Images/1.png');
+    background-repeat: repeat;
+    overflow:hidden;
+}
+
+
+h1, h2, h3, h4, h5, span {
+    cursor: default !important;
+}
+
+i {
+    cursor: pointer !important;
+}
+
+#LoaderAnime {
+    background: rgba(0, 0, 0, 0.89);
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease-in;
+    z-index: 5000 !important;
+}
+
+    #LoaderAnime > div {
+        height: 350px;
+        width: 80px;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        font-size: 25px;
+        line-height: 12em;
+        transform: scale(0.9);
+    }
+
+        #LoaderAnime > div > span {
+            position: absolute;
+            top: 50px;
+            width: 190px;
+            left: -51px;
+        }
+
+.clearFloats {
+    clear: both;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.zero-margin {
+    margin: 0px;
+}
+
+label {
+    cursor: pointer;
+}
+
+#container {
+    position: relative;
+}
+
+.CodeCafe-logo {
+    color: white;
+    cursor: pointer !important;
+}
+.CodeCafe-logo:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 50px;
+    height: 49px;
+    background-image: url(../Images/cognizant.png);
+    background-size: 100%;
+    transition:all 0.3s ease-in-out
+}
+
+    .CodeCafe-logo h4 {
+        display: inline;
+        vertical-align: middle;
+        cursor: pointer !important;
+        text-shadow: 1px 1px 3px #223e52;
+        margin-left: 60px;
+        line-height: 1.5em;
+    }
+
+    .CodeCafe-logo:hover:before {
+        transform: scale(1.1);
+    }
+
+    .CodeCafe-logo:hover h4 {
+        border-bottom: solid 1px #dadada;
+    }
+
+
+.pagewidth {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+
+
+header {
+    position: fixed;
+    z-index: 9999;
+    background: rgba(0, 137, 0, 0.78);
+    width: 450px;
+    height: 120%;
+    transform: rotate(15deg);
+    margin-top: -170px;
+    margin-left: -180px;
+}
+
+.page-wrap {
+    min-height: 99%;
+    margin-bottom: -39px;
+    overflow: hidden;
+}
+
+    .page-wrap:after {
+        content: "";
+        display: block;
+    }
+
+    .site-footer, .page-wrap:after {
+        height: 50px;
+    }
+
+.site-footer {
+    border-top: solid 8px rgba(49, 49, 49, 0);
+    background: rgb(0, 0, 0);
+    z-index: 999999;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0px 0px 10px #000000;
+    color: #a5a5a5;
+}
+
+    .site-footer .content {
+        text-align: center;
+        margin-top: -1px;
+    }
+
+    .site-footer .copyright {
+        font-size: 22px;
+        vertical-align: middle;
+    }
+
+    .site-footer span {
+        font-size: 12px;
+        vertical-align: middle;
+    }
+
+    .site-footer:hover .chin2logo {
+        transform: scale(1.5) rotate(180deg);
+    }
+
+
+.leftside-nav {
+    position: absolute;
+    width: 345px;
+    z-index: 10000;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+
+
+
+.CodeCafe-desc {
+    font-size: 1.2em;
+    margin: 15px 10px;
+    word-break: break-word;
+    line-height: 1.5em;
+    text-shadow: 1px 1px 3px #132e42;
+}
+
+::-moz-selection { /* Code for Firefox */
+    background: transparent;
+}
+
+::selection {
+    background: transparent;
+}
+
+
+.Submissions-container {
+    position: absolute;
+    padding: 5px;
+    padding-left: 389px;
+    width: 100%;
+    height: calc(100% - 38px);
+    z-index: 999;
+    color: #bdbdbd;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.pagination {
+    padding: 11px 25px;
+    height: 47px;
+    overflow: auto;
+    transition:all 0.3s ease-in-out;
+    position: absolute;
+    background: #1B1B1B;
+    z-index: 999999999;
+}
+.pagination:hover {
+
+height: 150px;
+
+margin-top: -100px;
+}
+
+.pagination li.active {
+    background-color: #097409 !important;
+}
+.pagination li:hover {
+    background-color: #097409 !important;
+}
+.pagination li:hover a {
+    color: #fff !important;
+}
+
+.pagination li a {
+    color: #0C770C !important;
+}
+.pagination li.active a {
+    color: #fff !important;
+}
+
+#Submissions-scroll {
+    width: 100%;
+    padding: 0px 15px 40px 0px;
+    height: 83%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: inset 0 9px 28px -14px rgba(0, 0, 0, 0.48);
+}
+
+.submissions-item {
+    margin: 20px 0px;
+    background: rgba(0, 0, 0, 0.41);
+    padding: 15px;
+    border-radius: 10px;
+    float: left;
+    transition: all 0.3s ease-in;
+    position: relative;
+}
+
+    .submissions-item:hover .submissions-img {
+        transform: scale(1.1);
+        -webkit-filter: drop-shadow(5px 5px 5px #000);
+        filter: drop-shadow(5px 5px 5px #000);
+    }
+
+    .submissions-item.list {
+        width: 100%;
+        margin: 15px 0px;
+    }
+
+    .submissions-item.grid {
+        width: 43%;
+        margin: 3%;
+        min-height: 510px;
+    }
+
+.submissions-img {
+    transition: all 0.3s ease-in-out;
+    width: 60px;
+    height: 60px;
+    vertical-align: middle;
+    display: inline;
+}
+
+
+    .submissions-img:hover {
+        transform: scale(1.1);
+        -webkit-filter: drop-shadow(5px 5px 5px #000);
+        filter: drop-shadow(5px 5px 5px #000);
+    }
+
+.submissions-item.grid .submission-texts {
+    float: left;
+    padding: 0px 15px;
+    width: 100%;
+    position: relative;
+}
+
+    .submissions-item.grid .submission-texts pre {
+        position: relative;
+    }
+
+.submissions-item.grid .go-full {
+    position: absolute;
+    top: 254px;
+    right: 50px;
+    padding: 10px;
+    background: rgba(134, 134, 134, 0.3);
+    cursor: pointer !important;
+}
+
+.submissions-item.list .go-full {
+    position: absolute;
+    top: 254px;
+    right: 50px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer !important;
+}
+
+.submissions-item.grid .submission-texts h6 {
+    line-height: 1.2em;
+}
+
+.submissions-item.list .submission-texts {
+    float: left;
+    padding: 0px 15px;
+    width: 100%;
+}
+
+    .submissions-item.list .submission-texts pre {
+        position: relative;
+        width: 100%;
+    }
+
+    .submissions-item.list .submission-texts h4 {
+        margin: 5px 10px;
+        display: inline;
+        vertical-align: middle;
+    }
+.submission-texts   .pre-container{
+
+}
+
+.submission-texts .pre-container {
+    box-shadow: inset 0px 0px 55px 15px rgba(0, 0, 0, 0.47);
+    margin-top: 10px;
+    background: rgba(41, 41, 41, 0.67);
+    width: 100%;
+    max-height: 240px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: solid 1px rgba(8, 115, 8, 0.24);
+}
+.submission-texts pre {
+    box-shadow: inset 0px 0px 55px 15px rgba(0, 0, 0, 0.47);
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.19);
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.submissions-item.grid .submission-texts h4 {
+    text-align: center;
+    display: inline;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.submissions-item .submission-texts i {
+    vertical-align: text-bottom;
+}
+
+.submissions-item .submission-texts .long-text {
+    word-break: break-all;
+    /* white-space:nowrap; */
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+.layout-btns-grid {
+    position: absolute;
+    z-index: 999999;
+    top: 122px;
+    left: 20px;
+    color: #b3b3b3;
+}
+
+    .layout-btns-grid i {
+        padding: 15px;
+        font-size: 25px;
+        background: rgba(0, 0, 0, 0.1);
+        margin: 0px;
+        margin-right: -3px;
+        color: white;
+    }
+
+        .layout-btns-grid i:hover {
+            background: rgba(0, 0, 0, 0.34);
+        }
+
+        .layout-btns-grid i.active {
+            background: rgba(255, 255, 255, 0.6);
+            color: rgb(29, 113, 118);
+        }
+
+.sort-btns-grid {
+    position: absolute;
+    z-index: 999999;
+    top: 220px;
+    left: 20px;
+    color: #b3b39f;
+    width: 230px;
+}
+
+    .sort-btns-grid [type="radio"]:not(:checked) + label, [type="radio"]:checked + label {
+        color: white;
+        margin-right: 12px;
+        padding-left: 25px;
+    }
+
+    .sort-btns-grid label i {
+        color: #e4e4e4;
+        vertical-align: sub;
+        margin: 0;
+        font-size: 20px;
+    }
+
+    .sort-btns-grid form p {
+        float: left;
+    }
+
+.btns-grid {
+    position: absolute;
+    top: 8px;
+    right: 0px;
+    margin-right: 3px;
+}
+
+    .btns-grid h6 {
+        float: left;
+        padding: 7px 0px 0px 6px;
+        font-size: 19px;
+        margin: 0px;
+        margin-right: 9px;
+        color: white;
+    }
+
+    .btns-grid i {
+        float: left;
+        padding: 3px;
+        font-size: 24px;
+        margin: 0px;
+        margin-right: -3px;
+        color: white;
+        z-index: 99999;
+        transition: all 0.2s ease-in;
+    }
+
+        .btns-grid i:hover {
+            transform: scale(1.1);
+        }
+
+.chin2logo {
+    width: 25px;
+    height: 25px;
+    vertical-align: sub;
+    margin: 0px 5px;
+    transition: all 0.3s ease-out;
+}
+
+    .chin2logo:hover {
+        transform: scale(1.5) rotate(360deg) translateY(-5px) !important;
+    }
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0, 137, 0, 0.78);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.5);
+}
+
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(0, 137, 0, 0.78);
+    }
+
+
+
+
+
+@media only screen and (max-width: 479px) {
+    header {
+        width: 120%;
+        height: 160px;
+        transform: rotate(-5deg);
+        margin-top: -20px;
+        margin-left: -30px;
+    }
+
+    .leftside-nav {
+        width: 100%;
+    }
+
+    .CodeCafe-desc {
+        display: none;
+    }
+
+    .Submissions-container {
+        padding-left: 15px;
+        padding-top: 76px;
+        z-index: 9999;
+    }
+    #Submissions-scroll{
+
+height: 76%;
+
+}
+
+    .submissions-item.grid {
+        width: 100%;
+        margin: 15px 0px;
+    }
+
+
+    .layout-btns-grid {
+        position: absolute;
+        z-index: 999999;
+        top: 11px;
+        right: 30px;
+        color: #b3b3b3;
+        left: inherit;
+    }
+
+    .sort-btns-grid {
+        position: absolute;
+        z-index: 999999;
+        top: 72px;
+        left: initial;
+        right: -30px;
+        color: #b3b39f;
+        transform: scale(0.7);
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width:767px) {
+    header {
+        width: 120%;
+        height: 200px;
+        transform: rotate(-9deg);
+        margin-top: -70px;
+        margin-left: -50px;
+    }
+
+    .leftside-nav {
+        width: 100%;
+    }
+
+    .CodeCafe-desc {
+        display: none;
+    }
+
+    .Submissions-container {
+        padding-left: 15px;
+        padding-top: 91px;
+        z-index: 9999;
+    }
+        #Submissions-scroll{
+
+height: 75%;
+
+}
+
+    .layout-btns-grid {
+        position: absolute;
+        z-index: 999999;
+        top: 5px;
+        color: #b3b3b3;
+        right: 40px !important;
+        left: inherit;
+    }
+
+    .sort-btns-grid {
+        position: absolute;
+        z-index: 999999;
+        width: 240px;
+        left: inherit;
+        top: 80px;
+        right: 0 !important;
+        color: #b3b39f;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width:991px) {
+    header {
+        width: 450px;
+        height: 160%;
+        transform: rotate(15deg);
+        margin-top: -170px;
+        margin-left: -180px;
+    }
+
+    .leftside-nav {
+        width: 330px;
+        height: calc(100% - 50px);
+    }
+
+    .layout-btns-grid {
+        position: absolute;
+        z-index: 999999;
+        top: 122px;
+        left: 20px;
+        color: #b3b3b3;
+    }
+
+    .sort-btns-grid {
+        position: absolute;
+        z-index: 999999;
+        top: 220px;
+        left: 20px;
+        color: #b3b39f;
+    }
+    .Submissions-container {
+
+    }
+        #Submissions-scroll{
+
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width:1200px) {
+    header {
+        width: 450px;
+        height: 160%;
+        transform: rotate(15deg);
+        margin-top: -170px;
+        margin-left: -180px;
+    }
+
+    .leftside-nav {
+        width: 335px;
+        height: calc(100% - 50px);
+    }
+
+    .layout-btns-grid {
+        position: absolute;
+        z-index: 999999;
+        top: 122px;
+        left: 20px;
+        color: #b3b3b3;
+    }
+
+    .sort-btns-grid {
+        position: absolute;
+        z-index: 999999;
+        top: 220px;
+        left: 20px;
+        color: #b3b39f;
+    }
+    .Submissions-container {
+
+    }
+    #Submissions-scroll{
+
+    }
+}
+
+
+@media only screen and (min-width:1200px) {
+
+}
