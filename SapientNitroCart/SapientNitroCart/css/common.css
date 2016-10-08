@@ -141,12 +141,12 @@ label {
     position: relative;
 }
 
-.CodeCafe-logo {
+.Sapient-logo {
     color: white;
     cursor: pointer !important;
 }
 
-    .CodeCafe-logo:before {
+    .Sapient-logo:before {
         content: ' ';
         display: block;
         position: absolute;
@@ -157,7 +157,7 @@ label {
         transition: all 0.3s ease-in-out;
     }
 
-    .CodeCafe-logo h4 {
+    .Sapient-logo h4 {
         display: inline;
         vertical-align: middle;
         cursor: pointer !important;
@@ -166,11 +166,11 @@ label {
         line-height: 1.5em;
     }
 
-    .CodeCafe-logo:hover:before {
+    .Sapient-logo:hover:before {
         transform: scale(1.1);
     }
 
-    .CodeCafe-logo:hover h4 {
+    .Sapient-logo:hover h4 {
         border-bottom: solid 1px #dadada;
     }
 
