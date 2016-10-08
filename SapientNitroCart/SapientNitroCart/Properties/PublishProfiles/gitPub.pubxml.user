@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\mechi\Desktop\O_n_e_P_u_s_h\github</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="ApplicationInsights.config">
+      <publishTime>09/15/2016 11:33:41</publishTime>
+    </File>
+    <File Include="bin/ApplicationInsights.config">
+      <publishTime>09/15/2016 11:33:41</publishTime>
+    </File>
+    <File Include="bin/OnePush.dll">
+      <publishTime>09/17/2016 23:49:24</publishTime>
+    </File>
+    <File Include="css/common.css">
+      <publishTime>09/17/2016 22:40:44</publishTime>
+    </File>
+    <File Include="css/materialize.min.css">
+      <publishTime>09/18/2016 00:20:25</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>09/14/2016 20:29:38</publishTime>
+    </File>
+    <File Include="Images/bg.png">
+      <publishTime>09/17/2016 17:00:27</publishTime>
+    </File>
+    <File Include="Images/bgg.png">
+      <publishTime>09/17/2016 17:05:05</publishTime>
+    </File>
+    <File Include="Images/chin2km.png">
+      <publishTime>09/17/2016 21:37:14</publishTime>
+    </File>
+    <File Include="Index.html">
+      <publishTime>09/18/2016 00:39:42</publishTime>
+    </File>
+    <File Include="js_setup/angular-mocks.js">
+      <publishTime>09/14/2016 22:15:54</publishTime>
+    </File>
+    <File Include="js_setup/angular-route.js">
+      <publishTime>09/14/2016 22:16:01</publishTime>
+    </File>
+    <File Include="js_setup/angular-route.min.js">
+      <publishTime>09/14/2016 22:16:01</publishTime>
+    </File>
+    <File Include="js_setup/angular-route.min.js.map">
+      <publishTime>09/14/2016 22:16:01</publishTime>
+    </File>
+    <File Include="js_setup/angular.js">
+      <publishTime>09/15/2016 10:28:32</publishTime>
+    </File>
+    <File Include="js_setup/angular.min.js">
+      <publishTime>09/14/2016 22:15:54</publishTime>
+    </File>
+    <File Include="js_setup/angular.min.js.map">
+      <publishTime>09/15/2016 10:28:38</publishTime>
+    </File>
+    <File Include="js_setup/jasmine/boot.js">
+      <publishTime>09/14/2016 22:19:28</publishTime>
+    </File>
+    <File Include="js_setup/jasmine/console.js">
+      <publishTime>09/14/2016 22:19:28</publishTime>
+    </File>
+    <File Include="js_setup/jasmine/jasmine-html.js">
+      <publishTime>09/14/2016 22:19:28</publishTime>
+    </File>
+    <File Include="js_setup/jasmine/jasmine.js">
+      <publishTime>09/14/2016 22:19:28</publishTime>
+    </File>
+    <File Include="js_setup/jquery-2.1.1.min.js">
+      <publishTime>09/14/2016 19:57:30</publishTime>
+    </File>
+    <File Include="js_setup/materialize.min.js">
+      <publishTime>09/14/2016 19:55:36</publishTime>
+    </File>
+    <File Include="ng_app/App.js">
+      <publishTime>09/17/2016 22:28:36</publishTime>
+    </File>
+    <File Include="ng_app/common/AppService.js">
+      <publishTime>09/17/2016 15:43:57</publishTime>
+    </File>
+    <File Include="ng_app/common/Constants.js">
+      <publishTime>09/17/2016 16:10:31</publishTime>
+    </File>
+    <File Include="ng_app/common/Templates/loader.html">
+      <publishTime>09/17/2016 22:48:20</publishTime>
+    </File>
+    <File Include="ng_app/components/portfolios/Partials/onepush-modal.html">
+      <publishTime>09/17/2016 22:48:13</publishTime>
+    </File>
+    <File Include="ng_app/components/portfolios/Partials/portfolio-item.html">
+      <publishTime>09/17/2016 22:47:46</publishTime>
+    </File>
+    <File Include="ng_app/components/portfolios/portfolios.controller.js">
+      <publishTime>09/18/2016 00:37:50</publishTime>
+    </File>
+    <File Include="ng_app/components/portfolios/portfolios.html">
+      <publishTime>09/17/2016 22:47:40</publishTime>
+    </File>
+    <File Include="ng_app/components/portfolios/portfolios.module.js">
+      <publishTime>09/17/2016 16:03:18</publishTime>
+    </File>
+    <File Include="ng_app/components/portfolios/portfolios.service.js">
+      <publishTime>09/18/2016 00:21:24</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/15/2016 11:35:51</publishTime>
+    </File>
+    <File Include="README.md">
+      <publishTime>09/17/2016 23:49:11</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/17/2016 23:43:04</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

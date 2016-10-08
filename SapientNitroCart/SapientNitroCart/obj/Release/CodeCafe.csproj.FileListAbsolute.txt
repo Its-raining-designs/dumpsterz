@@ -1,0 +1,7 @@
+E:\Github\Try-Outs\CodeCafe\CodeCafe\bin\ApplicationInsights.config
+E:\Github\Try-Outs\CodeCafe\CodeCafe\bin\CodeCafe.dll.config
+E:\Github\Try-Outs\CodeCafe\CodeCafe\bin\CodeCafe.dll
+E:\Github\Try-Outs\CodeCafe\CodeCafe\bin\CodeCafe.pdb
+E:\Github\Try-Outs\CodeCafe\CodeCafe\obj\Release\CodeCafe.csprojResolveAssemblyReference.cache
+E:\Github\Try-Outs\CodeCafe\CodeCafe\obj\Release\CodeCafe.dll
+E:\Github\Try-Outs\CodeCafe\CodeCafe\obj\Release\CodeCafe.pdb

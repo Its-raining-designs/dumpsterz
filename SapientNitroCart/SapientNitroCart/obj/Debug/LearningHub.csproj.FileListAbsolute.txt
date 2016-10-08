@@ -1,0 +1,7 @@
+E:\Github\Try-Outs\LearningHub\LearningHub\bin\ApplicationInsights.config
+E:\Github\Try-Outs\LearningHub\LearningHub\bin\LearningHub.dll.config
+E:\Github\Try-Outs\LearningHub\LearningHub\bin\LearningHub.dll
+E:\Github\Try-Outs\LearningHub\LearningHub\bin\LearningHub.pdb
+E:\Github\Try-Outs\LearningHub\LearningHub\obj\Debug\LearningHub.csprojResolveAssemblyReference.cache
+E:\Github\Try-Outs\LearningHub\LearningHub\obj\Debug\LearningHub.dll
+E:\Github\Try-Outs\LearningHub\LearningHub\obj\Debug\LearningHub.pdb
