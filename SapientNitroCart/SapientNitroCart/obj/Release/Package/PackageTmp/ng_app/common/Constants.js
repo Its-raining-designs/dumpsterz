@@ -2,10 +2,11 @@
 
 (function () {
     'use strict'
-    var constants = angular.module("CodeCafeApp")
+    var constants = angular.module("NitroCartApp")
     .constant('appConstants', {
 
-        CodeCafeBaseURL: "https://hackerearth.0x10.info/api/ctz_coders",
+        SapientNitroBaseURL: "https://hackerearth.0x10.info/api/nitro_deals",
 
-    });
+    })
+
 })();

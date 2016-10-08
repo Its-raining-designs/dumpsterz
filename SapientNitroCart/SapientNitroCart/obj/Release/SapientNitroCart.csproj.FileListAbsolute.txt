@@ -1,0 +1,7 @@
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\bin\ApplicationInsights.config
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\bin\SapientNitroCart.dll.config
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\bin\SapientNitroCart.dll
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\bin\SapientNitroCart.pdb
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\obj\Release\SapientNitroCart.csprojResolveAssemblyReference.cache
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\obj\Release\SapientNitroCart.dll
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\obj\Release\SapientNitroCart.pdb

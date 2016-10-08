@@ -97,6 +97,7 @@
     <Content Include="js_setup\jasmine\jasmine.js" />
     <Content Include="js_setup\angular.min.js.map" />
     <Content Include="js_setup\angular-route.min.js.map" />
+    <None Include="Properties\PublishProfiles\sapient.pubxml" />
     <None Include="Properties\PublishProfiles\SapientNitroCart.pubxml" />
     <None Include="Properties\PublishProfiles\gitPub.pubxml" />
     <None Include="Properties\PublishProfiles\SapientNitroCart_pubs.pubxml" />

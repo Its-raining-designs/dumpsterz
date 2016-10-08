@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="CodeCafeApp">
+<html ng-app="NitroCartApp">
 <head>
-    <title>CodeCafe</title>
+    <title>SapientNitro Cart</title>
     <!--Meta-->
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
     <meta http-equiv='Cache-control' content='no-cache' />
@@ -26,7 +26,7 @@
 
 </head>
 <body>
-    <div class="page-wrap" ng-controller="SubmissionsController as submissionsVM">
+    <div class="page-wrap" ng-controller="ProductsController as productsVM">
 
         <header>
             <!--Polygon shaper side nav backbground-->
@@ -34,21 +34,21 @@
 
         <!--Navigation and login Sidebar-->
         <div class="leftside-nav">
-            <a href="#/" class="CodeCafe-logo"><h4>CodeCafe</h4></a><br />
-            <div class="CodeCafe-desc">a simplified code searching experience!</div>
+            <a href="#/" class="Sapient-logo"><h4>Nitro Cart</h4></a><br />
+            <div class="nitro-desc">an eCom hub!</div>
 
 
             <div class="layout-btns-grid">
                 <h6>Choose a layout</h6>
-                <i class="material-icons" ng-class="{'active':submissionsVM.LayoutClass=='grid'}" ng-click="submissionsVM.setLayout('grid')">view_module</i>
-                <i class="material-icons" ng-class="{'active':submissionsVM.LayoutClass=='list'}" ng-click="submissionsVM.setLayout('list')">storage</i>
+                <i class="material-icons" ng-class="{'active':productsVM.LayoutClass=='grid'}" ng-click="productsVM.setLayout('grid')">view_module</i>
+                <i class="material-icons" ng-class="{'active':productsVM.LayoutClass=='list'}" ng-click="productsVM.setLayout('list')">storage</i>
             </div>
 
             <div class="sort-btns-grid">
-                <h6>Filter by status</h6>
+                <h6>Sort by</h6>
                 <form action="#">
-                    <div ng-repeat="item in submissionsVM.filterByList" ng-click="submissionsVM.filterList()">
-                        <input name="group1" type="checkbox" id="{{item.category}}" ng-model="item.selected" ng-value="true" />
+                    <div ng-repeat="item in productsVM.sortByList" ng-click="productsVM.sortList(item)">
+                        <input name="group1" type="radio" id="{{item.category}}" ng-model="item.selected" ng-value="true" />
                         <label for="{{item.category}}"><i class="material-icons">{{item.icon}}</i> {{item.display}} </label>
                     </div>
                 </form>
@@ -61,63 +61,73 @@
 
         <!--This is where different route's view are displayed-->
         <!--<div ng-view></div>-->
-        <div class="Submissions-container">
+        <div class="Products-container">
 
 
             <form class="col s12">
                 <div class="row">
                     <div class="input-field col s12 m12 l4">
-                        <h4 class="zero-margin">Code Submissions</h4>
+                        <h4 class="zero-margin">Deals</h4>
                     </div>
                     <div class="input-field col col s12 m12 l8">
                         <i class="material-icons prefix">search</i>
-                        <input id="query" type="text" ng-model="submissionsVM.query">
+                        <input id="query" type="text" ng-model="productsVM.query" class="autocomplete">
                         <label for="query">Search</label>
-
                     </div>
                 </div>
             </form>
 
-            <div id="Submissions-scroll" ng-cloak>
+            <div id="Products-scroll">
 
-                <div ng-cloak ng-repeat="submission in submissionsVM.Submissions | filter:submissionsVM.query" ng-if="submission.isAvail">
-                    <div class="submissions-item" ng-class="submissionsVM.LayoutClass">
-                        <div class="btns-grid">
-                            <i class="material-icons go-full tooltipped" ng-click="submissionsVM.goFullScreen($event)" data-position="top" data-tooltip="Go Fullscreen">fullscreen</i>
-                        </div>
+                <div ng-repeat="Prod in productsVM.Products | filter:productsVM.query" ng-if="Prod.isAvail">
+                    <div class="product-item" ng-class="productsVM.LayoutClass">
 
-                        <div class="submission-texts">
-                            <img class="submissions-img" src="{{submissionsVM.LanguageImages[submission.language]}}" />
-                            <h4>  {{submission.title}}</h4>
-                            <div class="pre-container">
-                                <pre>
-                                     {{submission.source_code}}                                
-                                </pre>
+                        <div class="products-texts">
+
+
+                            <div class="img-div">
+                                <img class="product-img" ng-src="{{Prod.image}}" err-src="Images/sapient.jpg" />
+                                <div class="btns-grid">
+
+                                    <i class="material-icons" ng-click="productsVM.setLike(Prod,true)">thumb_up</i>
+                                    <h6>{{productsVM.getLikes(Prod,true)}}</h6>
+                                    <i class="material-icons" ng-click="productsVM.setLike(Prod,false)">thumb_down</i>
+                                    <h6>{{productsVM.getLikes(Prod,false)}}</h6>
+
+                                </div>
+                            </div>
+                            <div class="texts-div">
+                                <h4>  {{Prod.name}}</h4>
+
+                                <div class="long-text">
+                                    <h6>
+                                        <i class="material-icons">monetization_on</i>
+                                        {{Prod.price}}
+                                    </h6>
+                                    <h6 ng-init="Prod.stars={5:[1,2,3,4,5],4:[1,2,3,4],3:[1,2,3],2:[1,2],1:[1],0:[0]}">
+                                        <i class="material-icons" ng-repeat="str in Prod.stars[Prod.StarCount]">star</i>
+                                        <i class="material-icons" ng-if="Prod.hasHalfStar">star_half</i>
+                                        {{Prod.rating}} Stars
+                                    </h6>
+                                    <h6>
+                                        <i class="material-icons">people</i>
+                                        {{Prod.purchased_by}} Purchases
+                                    </h6>
+                                    <h6>
+                                        <i class="material-icons">bookmark</i>
+                                        {{Prod.tag}}
+                                    </h6>
+                                    <h6>
+                                        <i class="material-icons">bubble_chart</i>
+                                        {{Prod.provider}}
+                                    </h6>
+                                    <h6>
+                                        <a href="{{Prod.link}}" target="_blank"><i class="material-icons">shopping_cart</i> Details</a>
+                                    </h6>
+
+                                </div>
                             </div>
 
-                            <div class="long-text">
-                                <h6>
-                                    <i class="material-icons">bookmark_border</i>
-                                    {{submission.language}}
-                                </h6>
-                                <h6 ng-init="submission.stars={5:[1,2,3,4,5],4:[1,2,3,4],3:[1,2,3],2:[1,2],1:[1],0:[0]}">
-                                    <i class="material-icons" ng-repeat="str in submission.stars[submission.metadata.rating]">star</i>
-                                    {{submission.metadata.rating}} Stars
-                                </h6>
-                                <h6>
-                                    <i class="material-icons">people</i>
-                                    {{submission.metadata.users_attempted}} attempted
-                                </h6>
-                                <h6>
-                                    <i class="material-icons">verified_user</i>
-                                    {{submission.metadata.level}} Level
-                                </h6>
-                                <h6>
-                                    <i class="material-icons">play_arrow</i>
-                                    {{submission.compiler_status}}
-                                </h6>
-
-                            </div>
                         </div>
                         <div class="clearFloats"></div>
                     </div>
@@ -126,12 +136,7 @@
 
             </div>
 
-            <ul class="pagination" id="pagination-container">
-                <li class="waves-effect" ng-class="{'active':itm.active}" ng-repeat="itm in submissionsVM.pageinationIndexs" ng-click="submissionsVM.goToPage(itm,$event)"><a href="#!">{{itm.index}}</a></li>
-            </ul>
-
         </div>
-
 
     </div>
 
@@ -141,7 +146,7 @@
                 2016 <a href="http://www.chin2km.com" target="_blank">
                     <img src="Images/chin2km.png" class="chin2logo" />Chin2km
                 </a>
-                Media, Inc. All rights unfortunately not reserved.
+                Media, Inc. All rights reserved.
             </span>
         </div>
     </footer>
@@ -210,11 +215,12 @@
     <script src="ng_app/App.js"></script>
     <script src="ng_app/common/AppService.js"></script>
     <script src="ng_app/common/Constants.js"></script>
+    <script src="ng_app/common/Directives.js"></script>
 
-    <!--Submissions-->
-    <script src="ng_app/components/Submissions/Submissions.service.js"></script>
-    <script src="ng_app/components/Submissions/Submissions.controller.js"></script>
-    <script src="ng_app/components/Submissions/Submissions.module.js"></script>
+    <!--Products-->
+    <script src="ng_app/components/Products/Products.service.js"></script>
+    <script src="ng_app/components/Products/Products.controller.js"></script>
+    <script src="ng_app/components/Products/Products.module.js"></script>
 
 
 </body>

@@ -2,21 +2,21 @@
 
 (function () {
     'use strict';
-    var CodeCafeApp = angular.module("CodeCafeApp", [
+    var NitroCartApp = angular.module("NitroCartApp", [
                     'ngRoute',
-                    'CodeCafeApp.Submissions'
+                    'NitroCartApp.Products'
     ])
                 
 
-    CodeCafeApp.config(['$routeProvider', '$compileProvider', '$locationProvider',
+    NitroCartApp.config(['$routeProvider', '$compileProvider', '$locationProvider',
                       function ($routeProvider, $compileProvider, $locationProvider) {
                           $routeProvider
                             .otherwise({
-                                redirectTo: '/Submissions'
+                                redirectTo: '/Products'
                             });
                       }]);
 
-    CodeCafeApp.run(function ($rootScope,$window) {
+    NitroCartApp.run(function ($rootScope,$window) {
         console.log("App started successfully!");
     });
 

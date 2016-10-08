@@ -2,7 +2,7 @@
 
 (function () {
     'use strict';
-    var AppService = angular.module('CodeCafeApp')
+    var AppService = angular.module('NitroCartApp')
     .factory('AppService', function ($rootScope, $http, $location, $timeout) {
 
 
@@ -10,7 +10,7 @@
             ShowLoader: function (message) {
 
                 (function () {
-                    setTimeout(function () {
+                    $timeout(function () {
                         $rootScope.$apply(function () {
                             $rootScope.loaderVisibility = true;
                             $rootScope.loaderText = message;
@@ -20,7 +20,7 @@
             },
             HideLoader: function () {
                 (function () {
-                    setTimeout(function () {
+                    $timeout(function () {
                         $rootScope.$apply(function () {
                             $rootScope.loaderVisibility = false;
                         })
@@ -31,7 +31,7 @@
             LoadTimer: function (time, message) {
 
                 (function () {
-                    setTimeout(function () {
+                    $timeout(function () {
                         $rootScope.$apply(function () {
                             $rootScope.loaderVisibility = false;
                             $rootScope.loaderText = message;
@@ -40,7 +40,7 @@
                 })();
 
                 (function () {
-                    setTimeout(function () {
+                    $timeout(function () {
                         $rootScope.$apply(function () {
                             $rootScope.loaderVisibility = true;
                             $rootScope.loaderText = message;
@@ -49,7 +49,7 @@
                 })();
 
                 (function () {
-                    setTimeout(function () {
+                    $timeout(function () {
                         $rootScope.$apply(function () {
                             $rootScope.loaderVisibility = false;
                             $rootScope.loaderText = message;
