@@ -1,0 +1,6 @@
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\bin\ApplicationInsights.config
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\bin\SapientNitroCart.dll.config
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\bin\SapientNitroCart.dll
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\bin\SapientNitroCart.pdb
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\obj\Debug\SapientNitroCart.dll
+E:\Github\Try-Outs\SapientNitroCart\SapientNitroCart\obj\Debug\SapientNitroCart.pdb
